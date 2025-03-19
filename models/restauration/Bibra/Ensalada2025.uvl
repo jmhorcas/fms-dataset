@@ -1,0 +1,73 @@
+features
+	Bibra {abstract, version 2025, units {price 'euro'}}
+		mandatory
+			Ensalada {price 10.95}
+				mandatory
+					Bases
+						[1..2]
+							"Mixed lettuce"					
+							"Wild arugula"
+							"Lamb's lettuce"
+					Ingredients
+						[1..4]
+							"Organic tomato"
+							"Cherry tomatoes"
+							Cucumber
+							"Grated carrot"
+							"Red onion"
+							"Caramelized onion"
+							Broccoli
+							"Pickled onion"
+							"Sweet corn"
+							Walnuts
+							"Muscat raisins"
+							Wakame
+							Edamame
+							Pear
+							"Green apple"
+							"Boiled egg"
+							"Aged cheese"
+							"Parmesan cheese"
+							"Goat cheese medallion" {price 0.75}
+							"Torched goat cheese medallion" {price 0.75}
+							Avocado {price 0.75}
+							Mango {price 0.75}
+                    Proteins
+                        alternative
+                            Chicken
+                            "Teriyaki chicken"
+                            Tofu {vegan}
+                            "Canned tuna"
+                            Heura {vegan, price 1.00}
+                            "Kimchi chicken" {spicy}
+                            "Curry chicken"
+                            "Beetroot falafel" {vegan}
+                            "Sriracha tofu" {vegan, spicy}
+                            "Confit duck" {price 1.00}
+                            "Ponzu-marinated salmon" {price 1.00}
+                            "Flambéed teriyaki salmon" {price 2.00}
+                            "Tuna marinated in soy and sesame oil" {price 1.00}
+                    Dressings
+                        alternative
+                            "Honey mustard vinaigrette"
+                            "Extra virgin olive oil, vinegar & salt" {vegan}
+                            "Strawberry vinaigrette" {vegan}
+                            "Curry mayo" {vegan}
+                            "Balsamic vinaigrette" {vegan}
+                            Teriyaki {vegan}
+                            "Lebanese dressing" {vegan}
+                            "Teriyaki mayo"
+                            "Japanese mayo"
+                            "Truffle mayo"
+                    "Final Touch"
+                        alternative
+                            "Sesame mix"
+                            "Crunchy corn"
+                            "Pumpkin seeds"
+                            "Roasted peanuts"
+                            Dates
+                            "Semi-dried tomato"
+                            "Shichimi togarashi"
+                            Furikake
+                optional
+                    Extras

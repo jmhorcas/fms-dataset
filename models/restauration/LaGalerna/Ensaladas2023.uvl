@@ -1,0 +1,47 @@
+features
+	LaGalerna {abstract, version 2023, units {price 'euro'}}
+		mandatory
+			Ensalada {price 9.95}
+				or
+					"Mixed Lettuce"
+					Cannons
+					Espinach
+					Pasta
+					Couscous
+					"Rocket Salad"
+					Quinoa
+					Tomato
+					Cucumber
+					Carrot
+					Avocado
+					Onion
+					Apple
+					Pineapple
+					Banana
+					Kiwi
+					Raisins
+					"Pumkin Seeds"
+					"Sunflower Seeds"
+					Walnuts
+					Dates
+					Plums
+					"Crushed Toasted Corn"
+					"Dried Tomato"
+					Croutons
+					Tofu
+					Tuna
+					"Free Range Chicken"
+					"Spice Free Range Chicken"
+					"Natural Bacon"
+					"Natural Smoked Bacon Dried"
+					"Fresh Cheese"
+					"Fresh Mozzarella"
+					Emmental
+					Camembert
+					Parmesan {price 0.5}
+					"Goat Cheese"
+					"Curry & Mango Vinaigrette"
+                    "Balsamic Vinaigrette"
+					"Yogurt Sauce"
+					"Honey & Mustard Vinaigrette"
+					Vinaigrette

@@ -1,0 +1,31 @@
+features
+	FFRestaurant {abstract}
+		optional
+			Burgers {abstract}
+				...
+			Drinks {abstract}
+				...
+		optional
+			Toppings {abstract}
+				optional
+					"All The Way" {abstract}
+				mandatory
+					Ingredients {abstract}
+						or
+							Lettuce
+							Pickles
+							Tomatoes
+							"Grilled Onions"
+							Mayo 
+							Mustard
+							"Grilled Mushrooms"
+							Ketchup
+							"Green Peppers"
+							Relish
+							Onions
+							"Jalapeno Peppers"
+							"Hot Sauce"
+							"Steak Sauce"
+							"BBQ Sauce"
+constraints
+	"All The Way" => Lettuce & Pickles & Tomatoes & "Grilled Onions" & Mayo & Mustard & "Grilled Mushrooms" & Ketchup

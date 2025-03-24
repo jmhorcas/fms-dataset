@@ -1,0 +1,19 @@
+features
+	Burgers {abstract}
+		alternative
+			Hamburger {price 9.25}
+				optional
+					"Little Hamburger" {price -1.75}
+			Cheeseburger {price 10.75}
+				optional
+					"Little Cheeseburger" {price -2.50}
+			"Bacon Burger" {price 10.75}
+				optional
+					"Little Bacon Burger" {price -2.25}
+			"Bacon Cheeseburger" {price 11.75}
+				optional
+					"Little Bacon Cheeseburger" {price -2.75}
+constraints
+	Bunless => Burgers | Dogs
+	"All The Way" => Lettuce & Pickles & Tomatoes & "Grilled Onions" & Mayo & Mustard & "Grilled Mushrooms" & Ketchup
+	Toppings => Burgers | Dogs | Sandwiches

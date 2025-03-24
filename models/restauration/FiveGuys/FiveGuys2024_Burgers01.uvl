@@ -1,0 +1,11 @@
+features
+	Burgers {abstract}
+		alternative
+			Hamburger {price 9.25}
+			"Little Hamburger" {price 7.00}
+			Cheeseburger {price 10.75}
+			"Little Cheeseburger" {price 8.25}
+			"Bacon Burger" {price 10.75}
+			"Little Bacon Burger" {price 8.50}
+			"Bacon Cheeseburger" {price 11.75}
+			"Little Bacon Cheeseburger" {price 9.00}

@@ -1,0 +1,63 @@
+features
+    "Burger Bausatz" {url 'https://www.diebausatzlokale.at/'}
+        mandatory
+            String name
+            "Burger Options" {abstract}
+                alternative
+                    "Classic Burger" {note '100% beef', Allergen {Gluten, Mustard, Sesame}}
+                    "Vegetarian Burger" {note 'vegetable patty', Allergen {Gluten, Egg, Mustard}}
+                    "Pulled Pork Burger" {note 'shredded pork shoulder + BBQ sauce', Allergen {Gluten, Mustard}}
+            Prices
+                alternative
+                    "With lettuce" {Price 10.90}
+                    "With homemade sauce" {Price 9.10}
+                    "With 4 toppings" {Price 12.50}
+                        optional
+                            "Additional topping" cardinality [1..*] {Price 0.90}
+        mandatory
+            "Side Options" {abstract}
+                alternative
+                    "French Fries"
+                    "Potato Wedges"
+                    "Sweet Potato Fries"
+        optional
+            Toppings {abstract}
+                or
+                    Mayonnaise {Allergen {Egg, Mustard}}
+                    "Barbecue Sauce" {Allergen {Mustard}}
+                    "Sour Cream" {Allergen {Egg, Milk, Mustard}}
+                    "Curry Sauce" {Allergen {Milk, Celery, Mustard}}
+                    Mustard {Allergen {Mustard}}
+                    Ajvar
+                    Cheddar {note 'original burger cheese', Allergen {Milk}}
+                    Mozzarella {Allergen {Milk}}
+                    Feta {note 'sheep cheese', Allergen {Egg}}
+                    "Blue Cheese" {note 'Gorgonzola', Allergen {Egg, Mustard}}
+                    Pineapple
+                    Pickles {Allergen {Mustard}}
+                    Cucumbers {note 'fresh'}
+                    Tomato {note 'fresh slices'}
+                    Mushrooms {note 'fresh'}
+                    "Spring onions" {note 'fresh'}
+                    "Crispy fried onions" {Allergen {Gluten}}
+                    "Mild pepperoni" {Allergen {Soy, Mustard}}
+                    "Spicy pepperoni" {Allergen {Soy, Mustard}}
+                    Coleslaw {note 'homemade sauerkraut salad', Allergen {Egg, Mustard, Sulfites}}
+                    Speck
+                    "Real Ham" {note 'Austrian, no pizza block'}
+                    "Brie Cheese" {Allergen {Milk}}
+                    Leek {note 'fresh'}
+                    Parmesan {Allergen {Egg, Milk}}
+                    Corn
+                    Onion {note 'fresh'}
+        optional
+            "Premium Toppings" {abstract}
+                or
+                    "Extra Patty" {abstract}
+                        alternative
+                            "Double Patty" {Price 2.90, Allergen {Mustard}}
+                            "Triple Patty" {Price 5.80, Allergen {Mustard}}
+                    "Extra Cheedar" {abstract}
+                        alternative
+                            "Double Cheddar" {Price 1.60, Allergen {Milk}}
+                            "Triple Cheddar" {Price 2.40, Allergen {Milk}}

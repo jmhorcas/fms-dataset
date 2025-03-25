@@ -15,7 +15,7 @@ features
                     "French Fries"
                     "Potato Wedges"
                     "Sweet Potato Fries"
-            Toppings {abstract, Price 0.90}
+            Toppings {abstract, Price 0.90, note 'each additional ingredient costs extra'}
                 [4..*]
                     Mayonnaise {Allergen {Egg, Mustard}}
                     "Barbecue Sauce" {Allergen {Mustard}}

@@ -1,0 +1,15 @@
+imports
+    IngredientsBausatz2025 as Ingredients
+
+features
+    "Pizza Bausatz"
+        mandatory
+            "Pizza Options" {abstract}
+                alternative
+                    "Large Pizza" {Allergen {Gluten}}
+                    "Small Pizza" {Allergen {Gluten}}
+                    "Mini Pizza" {Allergen {Gluten}}
+            "Tomato Sauce"
+            Cheese {note 'no analog cheese'}
+            Oregano
+            Ingredients.Ingredients

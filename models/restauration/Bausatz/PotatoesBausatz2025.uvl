@@ -1,0 +1,13 @@
+imports
+    IngredientsBausatz2025 as Ingredients
+    
+features
+    "Potatoes Bausatz"
+        mandatory
+            "Potatoes Options" {abstract}
+                alternative
+                    "Large Potato Pan" {Allergen {Gluten}}
+                    "Small Potato Pan" {Allergen {Gluten}}
+                    "Mini Potato Pan" {Allergen {Gluten}}
+            "Homemade Cream Sauce" {Allergen {Milk}}
+            Ingredients.Ingredients

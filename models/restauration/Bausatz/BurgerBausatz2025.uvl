@@ -1,3 +1,6 @@
+imports
+    IngredientsBausatz2025 as Ingredients
+
 features
     "Burger Bausatz"
         mandatory
@@ -6,49 +9,15 @@ features
                 alternative
                     "Classic Burger" {note '100% beef', Allergen {Gluten, Mustard, Sesame}}
                     "Vegetarian Burger" {note 'vegetable patty', Allergen {Gluten, Egg, Mustard}}
-        mandatory
             "Homemade Sauce" {Allergen {Gluten, Egg, Milk, Celery, Mustard}}
             "French Fries"
             Ketchup {Allergen {Gluten, Mustard}}
-            Toppings {abstract}
-                [4..*]
-                    Pineapple
-                    Artichokes
-                    "Blue Cheese" {note 'Gorgonzola', Allergen {Milk}}
-                    "Barbecue Sauce" {Allergen {Mustard}}
-                    "Brie Cheese" {Allergen {Milk}}
-                    Broccoli
-                    "Burger Cheese" {Allergen {Milk}}
-                    "Cayenne Pepper"
-                    Mushrooms {note 'fresh'}
-                    "Curry Sauce" {Allergen {Milk, Celery, Mustard}}
-                    "Real Ham" {note 'Austrian, no pizza block'}
-                    "Emmental Cheese" {Allergen {Milk}}
-                    Pickles {Allergen {Mustard}}
-                    Feta {note 'Sheep Cheese', Allergen {Milk}}
-                    "Fresh Green Salad"
-                    Garlic {Allergen {Milk, Mustard}}
-                    "Pumpkin Seeds"
-                    Leek {note 'fresh'}
-                    Corn
-                    Mayonnaise {Allergen {Egg, Mustard}}
-                    Mozzarella {Allergen {Milk}}
-                    Parmesan {Allergen {Egg, Milk}}
-                    Paprika {note 'fresh'}
-                    "Mild pepperoni" {Allergen {Soy, Mustard}}
-                    "Spicy pepperoni" {Allergen {Soy, Mustard}}
-                    "Piri-Piri" {Allergen {Milk}}
-                    Prosciutto {note 'Italian'}
-                    Arugula {note 'fresh'}
-                    Salami {Allergen {Mustard}}
-                    Sardines {Allergen {Fish}}
-                    "Steak Tartare Sauce" {Allergen {Egg, Mustard}}
-                    Snails {Allergen {Mollusks}}
-                    Mustard {Allergen {Mustard}}
-                    "Sunflower Seeds" {Allergen {Gluten, Peanuts, Soy, Milk, Nuts, Mustard, Sesame}}
-                    Speck
-                    Spinach
-                    Tabasco
-                    Tuna {note 'Dolphin-safe caught', Allergen {Fish, Soy}}
-                    Tomato {note 'fresh slices'}
-                    Onion {note 'fresh'}
+            Ingredients.Ingredients
+constraints
+    !Ingredients."Basil Pesto"
+    !Ingredients.Egg
+    !Ingredients.Capers
+    !Ingredients."Pumpkin Seed Oil"
+    !Ingredients."Runner Beans"
+    !Ingredients.Zucchini
+    

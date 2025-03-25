@@ -1,28 +1,22 @@
 features
-    "Burger Bausatz" {url 'https://www.diebausatzlokale.at/'}
+    "Burger Bausatz"
         mandatory
             String name
             "Burger Options" {abstract}
                 alternative
-                    "Classic Burger" {note '100% beef', Allergen {Gluten, Mustard, Sesame}}
-                    "Vegetarian Burger" {note 'vegetable patty', Allergen {Gluten, Egg, Mustard}}
-                    "Pulled Pork Burger" {note 'shredded pork shoulder + BBQ sauce', Allergen {Gluten, Mustard}}
-            Prices
-                alternative
-                    "With lettuce" {Price 10.90}
-                    "With homemade sauce" {Price 9.10}
-                    "With 4 toppings" {Price 12.50}
-                        optional
-                            "Additional topping" cardinality [1..*] {Price 0.90}
+                    "Classic Burger" {note '100% beef', Allergen {Gluten, Mustard, Sesame}, Price 10.90}
+                    "Vegetarian Burger" {note 'vegetable patty', Allergen {Gluten, Egg, Mustard}, Price 9.10}
+                    "Pulled Pork Burger" {note 'shredded pork shoulder + BBQ sauce', Allergen {Gluten, Mustard}, Price 12.50}
         mandatory
+            Lettuce
+            "Homemade Sauce" {Allergen {Gluten, Egg, Milk, Celery, Mustard}}
             "Side Options" {abstract}
                 alternative
                     "French Fries"
                     "Potato Wedges"
                     "Sweet Potato Fries"
-        optional
-            Toppings {abstract}
-                or
+            Toppings {abstract, Price 0.90}
+                [4..*]
                     Mayonnaise {Allergen {Egg, Mustard}}
                     "Barbecue Sauce" {Allergen {Mustard}}
                     "Sour Cream" {Allergen {Egg, Milk, Mustard}}
@@ -31,8 +25,8 @@ features
                     Ajvar
                     Cheddar {note 'original burger cheese', Allergen {Milk}}
                     Mozzarella {Allergen {Milk}}
-                    Feta {note 'sheep cheese', Allergen {Egg}}
-                    "Blue Cheese" {note 'Gorgonzola', Allergen {Egg, Mustard}}
+                    Feta {note 'sheep cheese', Allergen {Milk}}
+                    "Blue Cheese" {note 'Gorgonzola', Allergen {Milk}}
                     Pineapple
                     Pickles {Allergen {Mustard}}
                     Cucumbers {note 'fresh'}

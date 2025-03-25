@@ -1,33 +1,30 @@
 features
-	"Five Guys" {abstract, version 2024, units {price 'euro', volume 'cl'}}
+	FFRestaurant {abstract}
 		optional
-			Burgers {abstract}
+			Burger {abstract, constraint Price == sum(Burger, Price)}
+				mandatory
+					Hamburger {Price 9.25}
+						optional
+							Little {Price -2.25}
+				optional
+					Cheese {Price 1.50}
+					Bacon {Price 1.50}
+					Drinks {abstract}
+			Dogs {abstract, constraint Price == sum(Dogs, Price)}
+				mandatory
+					"Hot Dog 100% Beef" {Price 6.00}
+				optional
+					"Cheese Dog" {Price 1.00}
+					"Bacon Dog" {Price 1.50}
+			Sandwiches {abstract, constraint Price == sum(Sandwiches, Price)}
 				alternative
-					Hamburger {price 9.25}
+					"Veggie Sandwich" {Price 5.75}
 						optional
-							"Little Hamburger" {price -1.75}
-					Cheeseburger {price 10.75}
+							"Cheese Veggie Sandwich" {Price 1.25}
+					"Grilled Cheese" {Price 5.50}
+					BLT {Price 7.25}
 						optional
-							"Little Cheeseburger" {price -2.50}
-					"Bacon Burger" {price 10.75}
-						optional
-							"Little Bacon Burger" {price -2.25}
-					"Bacon Cheeseburger" {price 11.75}
-						optional
-							"Little Bacon Cheeseburger" {price -2.75}
-			Dogs {abstract}
-				alternative
-					"Hot Dog 100% Beef" {price 6.00}
-					"Cheese Dog" {price 7.00}
-					"Bacon Dog" {price 7.50}
-					"Bacon Cheese Dog" {price 8.00}
-			Sandwiches {abstract}
-				alternative
-					"Veggie Sandwich" {price 5.75}
-					"Cheese Veggie Sandwich" {price 7.00}
-					"Grilled Cheese" {price 5.50}
-					BLT {price 7.25}
-					"Cheese BLT" {price 8.50}
+							"Cheese BLT" {Price 1.25}
 			Fries
 				mandatory
 					Style {asbtract}
@@ -36,36 +33,9 @@ features
 							"Cajun Style"
 					Size {abstract}
 						alternative
-							Little {price 3.90}
-							Regular {price 5.50}
-							Large {price 6.50}
-			Milkshakes {price 6.25}
-				mandatory
-					"Mix-ins" {abstract}
-						or
-							Popcorn
-							Vanilla
-							Biscoff
-							"Peanut Butter"
-							"Salted Caramel"
-							Oreo
-							Mango
-							Chocolate
-							Strawberry
-							Banana
-							Bacon
-				optional
-					"Whipped Cream"
-			Drinks {abstract}
-				alternative
-					"Unlimited Freestyle" {price 3.75}
-					"Mineral Water" {trademark 'Evian', volume 50, price 2.90}
-					Budweiser {volume 33, price 4.75}
-					Corona {volume 36, price 4.75}
-					"All Day IPA" {volume 36, price 5.25}
-		optional
-			Bunless
-		optional
+							Little {Price 3.90}
+							Regular {Price 5.50}
+							Large {Price 6.50}
 			Toppings {abstract}
 				optional
 					"All The Way" {abstract}
@@ -87,7 +57,36 @@ features
 							"Hot Sauce"
 							"Steak Sauce"
 							"BBQ Sauce"
+			Milkshakes {Price 6.25}
+				mandatory
+					"Mix-ins" {abstract}
+						or
+							Popcorn
+							Vanilla
+							Biscoff
+							"Peanut Butter"
+							"Salted Caramel"
+							Oreo
+							Mango
+							Chocolate
+							Strawberry
+							Banana
+							Bacon
+				optional
+					"Whipped Cream"
+			Drinks {abstract}
+				alternative
+					"Unlimited Freestyle" {Price 3.75}
+					"Mineral Water" {Trademark 'Evian', volume 50, Price 2.90}
+					Budweiser {Volume 33, Price 4.75}
+					Corona {Volume 36, Price 4.75}
+					"All Day IPA" {Volume 36, Price 5.25}
+			Bunless
 constraints
+	Toppings => Burgers | Dogs | Sandwiches
 	Bunless => Burgers | Dogs
 	"All The Way" => Lettuce & Pickles & Tomatoes & "Grilled Onions" & Mayo & Mustard & "Grilled Mushrooms" & Ketchup
-	Toppings => Burgers | Dogs | Sandwiches
+	Little => Cheese.Price == 1.25
+	!Little & Cheese & Bacon => Hamburger.Price == Hamburger.Price - 0.50
+	Little & Cheese & Bacon => Hamburger.Price == Hamburger.Price - 0.75
+	"Cheese Dog" & "Bacon Dog" => "Hot Dog 100% Beef".Price == "Hot Dog 100% Beef".Price - 0.50

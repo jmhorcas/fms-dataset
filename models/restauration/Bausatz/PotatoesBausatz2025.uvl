@@ -2,7 +2,7 @@ imports
     IngredientsBausatz2025 as Ingredients
     
 features
-    "Potatoes Bausatz"
+    "Potatoes Bausatz" {note 'Sliced peeled potatoes from STMK, baked with cheese'}
         mandatory
             "Potatoes Options" {abstract}
                 alternative
@@ -11,3 +11,16 @@ features
                     "Mini Potato Pan" {Allergen {Gluten}}
             "Homemade Cream Sauce" {Allergen {Milk}}
             Ingredients.Ingredients
+constraints
+    !Ingredients.Arugula
+    !Ingredients."Barbecue Sauce"
+    !Ingredients.Carrots
+    !Ingredients.Cheddar
+    !Ingredients.Cucumber
+    !Ingredients."Green Salad"
+    !Ingredients."Gold Bears"
+    !Ingredients.Mayonnaise
+    !Ingredients.Mustard
+    !Ingredients.Pickles
+    !Ingredients."Steak Tartare Sauce"
+    

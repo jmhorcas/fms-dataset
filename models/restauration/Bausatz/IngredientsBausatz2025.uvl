@@ -1,6 +1,7 @@
 features
     Ingredients {abstract, note 'each additional ingredient costs extra'}
         [4..*]
+            Anchovies {Allergen {Fish}}
             Artichokes
             Arugula {note 'fresh'}
             "Basil Pesto" {Allergen {Milk, Nuts}}
@@ -8,16 +9,20 @@ features
             "Blue Cheese" {note 'Gorgonzola', Allergen {Milk}}
             "Brie Cheese" {Allergen {Milk}}
             Broccoli
-            "Burger Cheese" {Allergen {Milk}}
             Capers
+            Carrots
             "Cayenne Pepper"
-            "Curry Sauce" {Allergen {Milk, Celery, Mustard}}
+            Cheddar {note 'original burger cheese', Allergen {Milk}}
+            "Cooked Ham" {note 'Austrian, no pizza block'}
             Corn
+            Cucumber
+            "Curry Sauce" {Allergen {Milk, Celery, Mustard}}
             Egg {note 'Austrian, BIO Free-range', Allergen {Egg}}
             "Emmental Cheese" {Allergen {Milk}}
             "Feta Cheese" {note 'Sheep Cheese', Allergen {Milk}}
-            "Fresh Green Salad"
             Garlic {Allergen {Milk, Mustard}}
+            "Gold Bears" {note 'Haribo'}
+            "Green Salad"
             Leek {note 'fresh'}
             Mayonnaise {Allergen {Egg, Mustard}}
             "Mild pepperoni" {Allergen {Soy, Mustard}}
@@ -34,14 +39,13 @@ features
             Prosciutto {note 'Italian'}
             "Pumpkin Seeds"
             "Pumpkin Seed Oil"
-            "Real Ham" {note 'Austrian, no pizza block'}
             "Runner Beans"
             Salami {Allergen {Mustard}}
-            Sardines {Allergen {Fish}}
             Seafood {Allergen {Gluten, Crustaceans, Fish, Mollusks}}
             Snails {Allergen {Mollusks}}
             Speck
             "Spicy pepperoni" {Allergen {Soy, Mustard}}
+            "Spicy Salami" {Allergen {Mustard}}
             Spinach
             "Steak Tartare Sauce" {Allergen {Egg, Mustard}}
             "Sunflower Seeds" {Allergen {Gluten, Peanuts, Soy, Milk, Nuts, Mustard, Sesame}}
@@ -49,4 +53,5 @@ features
             Tofu {note 'Austrian, BIO smoked', Allergen {Gluten, Soy, Celery}}
             Tomato {note 'fresh slices'}
             Tuna {note 'Dolphin-safe caught', Allergen {Fish, Soy}}
+            "Whipped Cream" {Allergen {Milk}}
             Zucchini {note 'BIO fresh'}

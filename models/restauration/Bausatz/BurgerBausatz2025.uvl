@@ -1,6 +1,5 @@
 imports
     IngredientsBausatz2025 as Ingredients
-
 features
     "Burger Bausatz"
         mandatory
@@ -28,4 +27,3 @@ constraints
     !Ingredients.Zucchini
     !Ingredients."Gold Bears"
     !Ingredients."Whipped Cream"
-    

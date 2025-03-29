@@ -1,6 +1,5 @@
 imports
     IngredientsBausatz2025 as Ingredients
-
 features
     "Salad Bausatz"
         mandatory
@@ -22,4 +21,3 @@ features
                     "Yogurt Dressing" {Allergen {Egg, Soy, Milk, Mustard}}
 constraints
     Ingredients."Green Salad"
-    

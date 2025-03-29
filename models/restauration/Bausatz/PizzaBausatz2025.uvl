@@ -1,6 +1,5 @@
 imports
     IngredientsBausatz2025 as Ingredients
-
 features
     "Pizza Bausatz"
         mandatory

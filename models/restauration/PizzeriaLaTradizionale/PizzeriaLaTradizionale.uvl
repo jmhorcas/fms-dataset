@@ -1,10 +1,10 @@
 features
-    Pizza {constraint Price == Sum(Pizza, Price)}
+    Pizza
         optional
             Size {abstract}
                 alternative
-                    Medium {Size 35}
-                    Big {Size 50}
+                    Medium {size 35}
+                    Big {size 50}
             Calzone {Price 10.00}
         mandatory
             Base {abstract, Price {Medium 8.50, Big 11.00}}
@@ -13,8 +13,8 @@ features
                 mandatory
                     Mozzarella
                     Oregano
-            Ingredients {abstract, Price {Medium 1.00, Big 1.50}}
-                or
+            Ingredients cardinality [1..*] {abstract, Price {Medium 1.00, Big 1.50}}
+                alternative
                     Bacon
                     Ham
                     Chorizo
@@ -45,6 +45,6 @@ features
                     Spinach
                     Pepperoni
 constraints
-    Calzone => !Size  // xor(Calzone, Size)
+    Calzone => !Size
     !Calzone => Size
-    Calzone => Tomato & Ham & Mushrooms & Egg   // & ! all the rest ingredients
+    Calzone => Tomato & Ham & Mushrooms & Egg

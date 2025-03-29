@@ -1,5 +1,5 @@
 features
-	LaGalerna {abstract, version 2023, units {price 'euro'}}
+	LaGalerna {abstract, version '2023', units {price 'euro'}}
 		mandatory
 			Ensalada {price 9.95}
 				or
@@ -41,7 +41,7 @@ features
 					Parmesan {price 0.5}
 					"Goat Cheese"
 					"Curry & Mango Vinaigrette"
-                    "Balsamic Vinaigrette"
+					"Balsamic Vinaigrette"
 					"Yogurt Sauce"
 					"Honey & Mustard Vinaigrette"
 					Vinaigrette

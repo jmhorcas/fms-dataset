@@ -4,7 +4,6 @@ imports
     Bibra2025_Proteins
     Bibra2025_Dressings
     Bibra2025_FinalTouch
-
 features
     Salad {constraint Price == 10.95 + sum(Salad, Price)}
         mandatory

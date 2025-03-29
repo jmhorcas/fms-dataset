@@ -3,7 +3,7 @@ namespace Pizza
 features
 	Pizza {abstract}
 		mandatory
-			Topping {abstract}
+			Ingredients {abstract}
 				or
 					Tomato
 					Cream

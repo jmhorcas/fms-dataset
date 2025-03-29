@@ -1,6 +1,5 @@
 imports
     IngredientsBausatz2025 as Ingredients
-    
 features
     "Potatoes Bausatz" {note 'Sliced peeled potatoes from STMK, baked with cheese'}
         mandatory
@@ -23,4 +22,3 @@ constraints
     !Ingredients.Mustard
     !Ingredients.Pickles
     !Ingredients."Steak Tartare Sauce"
-    

@@ -33,7 +33,7 @@ features
                 mandatory
                     Bibra2025_Marinades.Marinades
 constraints
-    Bibra2025_Proteins."Flambéed teriyaki salmon" => !Marinades
+    Bibra2025_Proteins."Flambeed teriyaki salmon" => !Marinades
     !Bibra2025_Bases."Mixed lettuce"
     !Bibra2025_Bases."Wild arugula"
     !Bibra2025_Ingredients."Muscat raisins"

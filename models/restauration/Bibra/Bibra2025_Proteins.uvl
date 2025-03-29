@@ -14,5 +14,5 @@ features
             "Marinated tuna"
             "Marinated salmon"
             "Ponzu-marinated salmon" {Price 1.00}
-            "Flambéed teriyaki salmon" {Price 2.00}
+            "Flambeed teriyaki salmon" {Price 2.00}
             "Tuna marinated in soy and sesame oil" {Price 1.00}

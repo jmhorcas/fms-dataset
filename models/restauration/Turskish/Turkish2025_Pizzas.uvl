@@ -14,7 +14,6 @@ features
         optional
             Custom
 constraints
-    // Custom => #(Ingredients) <= 6
     Custom & Medium => Medium.Price == Medium.Price + 0.50
     Medium & IngredientsFM.Mozzarella & IngredientsFM.Tomato & IngredientsFM.Shrimps & IngredientsFM.Tuna & IngredientsFM.Mussels & IngredientsFM.Onion => Medium.Price == Medium.Price + 0.50
     Medium & IngredientsFM.Mozzarella & IngredientsFM.Tomato & IngredientsFM."Yogurt sauce" & (IngredientsFM.Chicken | IngredientsFM.Beef) => Medium.Price == Medium.Price + 1.00

@@ -1,0 +1,13 @@
+features
+	Root
+		optional
+			A
+		mandatory
+			B cardinality [1..*]
+				[2..3]
+					B1
+						optional
+							B11
+					B2
+					B3
+					B4

@@ -4,6 +4,7 @@ import logging
 import csv
 import math
 import pathlib
+import itertools
 from enum import Enum
 from typing import Any
 
@@ -69,14 +70,6 @@ def int2sci(n: int, precision: int = 2) -> str:
     return f'{mantissa:.{precision}f}e{exp}'
 
 
-def calculate_configurations_cardinal(cardinal: Relation) -> int:
-    configs = []
-    for k in range(relation.card_min, relation.card_max + 1):
-        combi_k = list(itertools.combinations(children_counts, k))
-        configs.append(math.prod(combi_k))
-    return sum(configs)
-
-
 def count_configurations_rec(feature: Feature) -> int:
     if feature.is_leaf():
         return 1
@@ -92,20 +85,21 @@ def count_configurations_rec(feature: Feature) -> int:
             children_counts = [count_configurations_rec(f) + 1 for f in relation.children]
             counts.append(math.prod(children_counts) - 1)
         elif relation.is_cardinal():
-            children_counts = [count_configurations_rec(f) + 1 for f in relation.children]
+            children_counts = [count_configurations_rec(f) for f in relation.children]
             cardinal_configs = []
             card_min = relation.card_min
             card_max = len(children_counts) if relation.card_max == -1 else relation.card_max
-            for k in range(relation.card_min, relation.card_max + 1):
+            for k in range(card_min, card_max + 1):
                 combi_k = list(itertools.combinations(children_counts, k))
-                cardinal_configs.append(math.prod(combi_k))
+                for combi in combi_k:
+                    cardinal_configs.append(math.prod(combi))
             counts.append(sum(cardinal_configs))
     feature_cardinality = 1
     if feature.is_multifeature():
         if feature.feature_cardinality.max == -1:
             feature_cardinality = float('inf')
         else:
-            feature_cardinality = feature.feature_cardinality.max - feature.feature_cardinality.min
+            feature_cardinality = feature.feature_cardinality.max - feature.feature_cardinality.min + 1
     return math.prod(counts) * feature_cardinality
 
 

@@ -1,4 +1,5 @@
 import os
+import sys
 import argparse
 import logging
 import csv
@@ -146,7 +147,7 @@ def main(fm_filepath: str) -> dict[str, Any]:
 
     csv_entry[CSVHeader.FEATURES.value] = len(fm.get_features())
     csv_entry[CSVHeader.CONSTRAINTS.value] = len(fm.get_constraints())
-    csv_entry[CSVHeader.CONFIGURATIONS.value] = n_configs
+    csv_entry[CSVHeader.CONFIGURATIONS.value] = int2sci(n_configs) if n_configs >= 1e6 else n_configs
     LOGGER.debug(f'Done for model {fm_filepath}.')
     return csv_entry
 
@@ -173,6 +174,8 @@ def main_dir(dirpath: str) -> None:
 
 
 if __name__ == '__main__':
+    sys.set_int_max_str_digits(100000)
+
     parser = argparse.ArgumentParser(description='Measure the complexity of an FM dataset.')
     parser.add_argument(metavar='path', dest='path', type=str, help='Input feature model (.uvl) or directory with models.')
     args = parser.parse_args()

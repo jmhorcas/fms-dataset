@@ -5,7 +5,6 @@ imports
     Bibra2025_Marinades
     Bibra2025_Dressings
     Bibra2025_FinalTouch
-
 features
     Pokebowls {constraint Price == sum(Pokebowls, Price)}
         mandatory

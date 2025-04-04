@@ -1,2 +1,105 @@
-# fms-dataset
-Dataset of feature models from the real world manually synthesized.
+# Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Bringing to fruition the complete elimination of cross-tree constraints to exploit the parallel analysis of feature models](#bringing-to-fruition-the-complete-elimination-of-cross-tree-constraints-to-exploit-the-parallel-analysis-of-feature-models)
+  - [Artifact description](#artifact-description)
+  - [How to use it](#how-to-use-it)
+    - [Requirements](#requirements)
+    - [Download and installation](#download-and-installation)
+    - [Execution of the scripts](#execution-of-the-scripts)
+    - [Additional scripts](#additional-scripts)
+  
+
+# Challenges of modeling variability in practice with UVL: A Dataset of real-world product lines
+This repository contains all the resources and artifacts that support the paper entitled "Dataset of feature models from the real world manually synthesized." submmited to the 29th International Systems and Software Product Line Conference (SPLC 2025).
+
+
+## Artifact description
+We present a dataset of feature models (FMs) of the restaurant business domain using the full expressiveness power of the [Universal Variability Language (UVL)](https://universal-variability-language.github.io/).
+
+The artifact includes:
+1. The FM dataset with XXX model in UVL.
+2. The Python scripts to replicate the experiments of the paper. This includes the following scripts:
+  - [count_complexity.py](count_complexity.py): Read an FM in UVL (.uvl) or a directory with a dataset of FMs and generate a `complexity.csv` file with the number of features and the estimated number of configurations for each model.
+  - [stats_complexity.py](stats_complexity.py): Read the .csv file generated with the previous `count_complexity` script, and show the statistical information of the dataset to plot a boxplot graph. That is, the median, the average, the lower and upper quartile, the lower and upper whisker, and the outliers.
+  - [count_language_constructs.py](count_language_constructs.py): Read an FM in UVL (.uvl) or a directory with a dataset of FMs and generate a `language_constructs.csv` file with the number of ocurrencies of the language constructs of each language level (major and minor) in UVL for each model.
+  - [stats_language_constructs.py](stats_language_constructs.py): Read the .csv file generated with the previous `count_language_constructs` script, and show the statistical information of the dataset. That is, for each language construct level it shows the mean, standard deviation, count and percentage of those constructs according to the number of models in the dataset.
+3. The [results of our evaluation](evaluation/) containing all .csv result files and [instructions to replicate the experiments](#execution-of-the-scripts).
+
+
+## How to use it
+
+### Requirements
+We relies on [flamapy](https://flamapy.github.io/) to analyze the datasets.
+In particular, the main dependencies are:
+
+- [Python 3.9+](https://www.python.org/)
+- [Flamapy](https://flamapy.github.io/)
+
+The framework has been tested in Linux and Windows 11.
+
+
+### Download and installation
+1. Install [Python 3.9+](https://www.python.org/)
+2. Download/Clone this repository and enter into the main directory.
+3. Create a virtual environment: `python -m venv env`
+4. Activate the environment: 
+   
+   In Linux: `source env/bin/activate`
+
+   In Windows: `.\env\Scripts\Activate`
+
+5. Install the flamapy: `pip install flamapy`
+     
+    ** In case that you are running Ubuntu and get an error installing flamapy, please install the package python3-dev with the command `sudo apt update && sudo apt install python3-dev` and update wheel and setuptools with the command `pip  install --upgrade pip wheel setuptools` before step 5.
+
+6. Update flamapy to the last version to support UVL extensions: `pip install flamapy-fm==2.0.2.dev0`
+
+
+### Execution of the scripts
+Here we show how to execute the scripts to analyze a dataset and replicate the experiments of the paper.
+You can use the restaurant business dataset available in [models folder](models/restauration/) or any other dataset from the literature. Datasets from the literature are not direct available in this repository for authors' rights reasons, but they are available in the following links:
+- [FMBenchmark](https://github.com/SoftVarE-Group/feature-model-benchmark/tree/master)
+- [UVLHub](https://www.uvlhub.io/)
+- [SPLOT](http://uvlhub.io/doi/10.5281/zenodo.12697473) - The SPLOT dataset is available also as part of UVLHub in UVL format.
+
+For each script, we describe its syntaxis, inputs, outputs, and an example of execution.
+
+- **Complexity:** Count the number of features and the estimated number of configurations for each model in the dataset.
+  
+  - Execution: `python count_complexity.py DATASET_DIR`
+  - Inputs: 
+    - The `DATASET_DIR` parameter specifies the file path of the folder containing the FMs of the dataset to analyze.
+    - Alternatively, the `DATASET_DIR` parameter can specify only one FMs to analyze it in solitary.
+  - Outputs:
+    - A `complexity.csv` with the results.
+    - A `complexity.log` file with warning and errors in case some FMs have syntax errors or other problems.
+  - Example: `python count_complexity.py models/restauration/`
+
+- **Complexity Stats:** Show statistical information of the dataset to plot a boxplot graph from the previous `complexity.csv` results file.
+  
+  - Execution: `python stats_complexity.py CSV_FILE`
+  - Inputs: 
+    - The `CSV_FILE` parameter specifies the file path of the `complexity.csv` file generated with the previous script.
+  - Outputs:
+    - The results are shown in the standard output.
+  - Example: `python stats_complexity.py complexity.csv`
+
+- **Language constructs:** Count the number of ocurrencies of the language constructs of each language level (major and minor) in UVL for each model in the dataset.
+  
+  - Execution: `python count_language_constructs.py DATASET_DIR`
+  - Inputs: 
+    - The `DATASET_DIR` parameter specifies the file path of the folder containing the FMs of the dataset to analyze.
+    - Alternatively, the `DATASET_DIR` parameter can specify only one FMs to analyze it in solitary.
+  - Outputs:
+    - A `language_constructs.csv` with the results.
+    - A `language_constructs.log` file with warning and errors in case some FMs have syntax errors or other problems.
+  - Example: `python count_language_constructs.py models/restauration/`
+
+- **Language Constructs Stats:** Show statistical information of the dataset from the previous `language_constructs.csv` results file.
+  
+  - Execution: `python stats_language_constructs.py CSV_FILE`
+  - Inputs: 
+    - The `CSV_FILE` parameter specifies the file path of the `language_constructs.csv` file generated with the previous script.
+  - Outputs:
+    - The results are shown in the standard output.
+  - Example: `python stats_language_constructs.py language_constructs.csv`

@@ -11,17 +11,16 @@ from typing import Any
 
 from flamapy.core.discover import DiscoverMetamodels
 from flamapy.core.exceptions import FlamaException
-from flamapy.metamodels.fm_metamodel.models import Feature, Relation
+from flamapy.metamodels.fm_metamodel.models import Feature
 
-from fm_secure_features_names import FMSecureFeaturesNames
+from utils.fm_secure_features_names import FMSecureFeaturesNames
 
 
-LOG_FILE = 'FMDataset.log'
-CSV_FILE_RESULTS = 'results.csv'
+LOG_FILE = 'complexity.log'
+CSV_FILE_RESULTS = 'complexity.csv'
 ERROR_STR = 'Error'
 
 
-#logging.basicConfig(filename=LOG_FILE, encoding='utf-8', level=logging.DEBUG)
 logging.basicConfig(filename=LOG_FILE, filemode="w", encoding='utf-8', level=logging.DEBUG)
 LOGGER = logging.getLogger(__name__)   
 LOGGER.addHandler(logging.StreamHandler())

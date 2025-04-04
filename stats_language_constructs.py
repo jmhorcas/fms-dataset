@@ -26,6 +26,7 @@ def main(filepath: str) -> None:
         print(f" |-Mean: {avg}")
         print(f" |-StDev: {stdev}")
         print(f" |-Count: {count} ({(count / rows) * 100} %)")
+        print()
 
 
 if __name__ == '__main__':

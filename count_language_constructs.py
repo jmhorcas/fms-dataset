@@ -13,8 +13,8 @@ from flamapy.core.models import ASTOperation
 from flamapy.metamodels.fm_metamodel.models import FeatureModel
 
 
-LOG_FILE = 'count_language_constructs.log'
-CSV_FILE_RESULTS = 'count_language_constructs.csv'
+LOG_FILE = 'language_constructs.log'
+CSV_FILE_RESULTS = 'language_constructs.csv'
 ERROR_STR = 'Error'
 
 

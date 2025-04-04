@@ -3,26 +3,21 @@ import sys
 import argparse
 import logging
 import csv
-import math
 import pathlib
-import itertools
 from enum import Enum
 from typing import Any
 
 from flamapy.core.discover import DiscoverMetamodels
 from flamapy.core.exceptions import FlamaException
 from flamapy.core.models import ASTOperation
-from flamapy.metamodels.fm_metamodel.models import FeatureModel, Feature, Relation
-
-from fm_secure_features_names import FMSecureFeaturesNames
+from flamapy.metamodels.fm_metamodel.models import FeatureModel
 
 
-LOG_FILE = 'FMDataset.log'
-CSV_FILE_RESULTS = 'results.csv'
+LOG_FILE = 'count_language_constructs.log'
+CSV_FILE_RESULTS = 'count_language_constructs.csv'
 ERROR_STR = 'Error'
 
 
-#logging.basicConfig(filename=LOG_FILE, encoding='utf-8', level=logging.DEBUG)
 logging.basicConfig(filename=LOG_FILE, filemode="w", encoding='utf-8', level=logging.DEBUG)
 LOGGER = logging.getLogger(__name__)   
 LOGGER.addHandler(logging.StreamHandler())
@@ -95,7 +90,6 @@ def main(fm_filepath: str) -> dict[str, Any]:
     try:
         LOGGER.debug(f'Reading feature model {path}')
         fm = dm.use_transformation_t2m(fm_filepath, 'fm')
-        fm = FMSecureFeaturesNames(fm).transform()
     except FlamaException as e:
         LOGGER.error(f'Error reading feature model {path}: {e}')
         return csv_entry

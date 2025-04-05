@@ -1,20 +1,21 @@
 features
-	LaGalerna {abstract, version '2023', units {price 'euro'}}
+	LaGalerna {abstract, version '2020', units {Price 'euro'}}
 		mandatory
-			Ensalada {price 9.95}
+			Integer Table
+			String "Your name"
+			Salad {Price 7.80}
 				or
 					"Mixed Lettuce"
 					Cannons
 					Espinach
-					Pasta
-					Couscous
 					"Rocket Salad"
+					Couscous
+					Pasta
 					Quinoa
 					Tomato
 					Cucumber
 					Carrot
 					Avocado
-					Onion
 					Apple
 					Pineapple
 					Banana
@@ -27,7 +28,6 @@ features
 					Plums
 					"Crushed Toasted Corn"
 					"Dried Tomato"
-					Croutons
 					Tofu
 					Tuna
 					"Free Range Chicken"
@@ -38,7 +38,7 @@ features
 					"Fresh Mozzarella"
 					Emmental
 					Camembert
-					Parmesan {price 0.5}
+					Parmesan
 					"Goat Cheese"
 					"Curry & Mango Vinaigrette"
 					"Balsamic Vinaigrette"

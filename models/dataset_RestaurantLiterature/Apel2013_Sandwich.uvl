@@ -1,0 +1,51 @@
+features
+    Sandwich
+        mandatory
+            Bread {abstract}
+                alternative
+                    "Sesame bread"
+                    "Wheat bread"
+                    "Oat bread"
+                    "White bread"
+            Sauce {abstract}
+                or
+                    "Honey Mustard"
+                    Mayo 
+                    "Mexican sauce"
+                    "Sweet and sour sauce"
+            Vegetables {abstact}
+                or 
+                    Lettuce
+                    Tomatoes 
+                    "Jalapeños"
+                    Pickles
+                    Cucumber
+                    Olives 
+                    Mushrooms 
+                    "Bell peppers"
+            Cheese {abstract}
+                or 
+                    Cheddar
+                    Mozzarella 
+                    "Pepper Jack"
+                    Swiss
+            Meat {abstract}
+                alternative
+                    Ham 
+                    Tuna 
+                    Turkey 
+                    Salami 
+                    Steak 
+                    Vegetarian 
+                    "Barbecue rib"
+                    "Grilled Chicken"
+            Toast {abstract}
+                alternative
+                    Toasted 
+                    "Not toasted"
+            Extras {abstract}
+                or 
+                    "More Cheese"
+                    "More Meat"
+                    Pepper 
+                    Salt

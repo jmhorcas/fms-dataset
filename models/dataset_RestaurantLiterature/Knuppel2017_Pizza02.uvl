@@ -1,0 +1,14 @@
+features
+    Pizza
+        mandatory
+            Topping
+                or
+                    Salami 
+                    Ham 
+                    Mozzarella 
+            Size 
+                alternative
+                    Normal 
+                    Big 
+constraints
+    Big => Mozzarella

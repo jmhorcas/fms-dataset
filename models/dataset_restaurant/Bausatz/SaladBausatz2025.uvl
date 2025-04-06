@@ -1,0 +1,23 @@
+imports
+    IngredientsBausatz2025 as Ingredients
+features
+    "Salad Bausatz"
+        mandatory
+            "Salad Options" {abstract}
+                alternative
+                    "Large Salad"
+                    "Small Salad"
+            Ingredients.Ingredients
+            Dressings
+                alternative
+                    "Vinegar & Oil" {Allergen {Sulfitos}}
+                    "Vinegar & Pumpkin Seed Oil" {Allergen {Sulfitos}}
+                    "Vinegar & Olive Oil" {Allergen {Sulfitos}}
+                    "Balsamic Vinegar & Oil" {Allergen {Sulfitos}}
+                    "Balsamic Vinegar & Pumpkin Seed Oil" {Allergen {Sulfitos}}
+                    "Balsamic Vinegar & Olive Oil" {Allergen {Sulfitos}}
+                    "American Dressing" {Allergen {Egg, Soy, Milk, Mustard}}
+                    "Herb Dressing" {note 'Italian', Allergen {Egg, Soy, Milk, Mustard}}
+                    "Yogurt Dressing" {Allergen {Egg, Soy, Milk, Mustard}}
+constraints
+    Ingredients."Green Salad"

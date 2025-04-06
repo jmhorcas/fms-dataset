@@ -40,12 +40,12 @@ class CSVWriter():
         self._filepath = filepath
         self._header = header
         if not pathlib.Path(filepath).exists():
-            with open(self._filepath, 'a+', newline='') as file:
+            with open(self._filepath, 'a+', newline='', encoding='utf-8') as file:
                 writer = csv.DictWriter(file, fieldnames=self._header)
                 writer.writeheader()
         
     def write_row(self, row: dict[str, Any], autocomplete: bool = True) -> None:
-        with open(self._filepath, 'a+', newline='') as file:
+        with open(self._filepath, 'a+', newline='', encoding='utf-8') as file:
             writer = csv.DictWriter(file, fieldnames=self._header)
             writer.writerow(row)
 
@@ -153,7 +153,7 @@ def main(fm_filepath: str) -> dict[str, Any]:
 
 def main_dir(dirpath: str) -> None:
     csv_writer = CSVWriter(CSV_FILE_RESULTS, [h.value for h in CSVHeader])
-    with open(CSV_FILE_RESULTS, 'r') as results_file:
+    with open(CSV_FILE_RESULTS, 'r', encoding='utf-8') as results_file:
         content = results_file.read()
     total_models = 0
     models_filepaths = get_filepaths(dirpath, ['uvl'])

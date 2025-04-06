@@ -35,6 +35,7 @@ class CSVHeader(Enum):
     AGGREGATE_FUNCTIONS = 'AggregateFunctions'
     TYPE_FEATURES = 'TypeFeatures'
     STRING_CONSTRAINTS = 'StringConstraints'
+    IMPORTS = 'Imports'
 
 
 class CSVWriter():
@@ -43,12 +44,12 @@ class CSVWriter():
         self._filepath = filepath
         self._header = header
         if not pathlib.Path(filepath).exists():
-            with open(self._filepath, 'a+', newline='') as file:
+            with open(self._filepath, 'a+', newline='', encoding='utf-8') as file:
                 writer = csv.DictWriter(file, fieldnames=self._header)
                 writer.writeheader()
         
     def write_row(self, row: dict[str, Any], autocomplete: bool = True) -> None:
-        with open(self._filepath, 'a+', newline='') as file:
+        with open(self._filepath, 'a+', newline='', encoding='utf-8') as file:
             writer = csv.DictWriter(file, fieldnames=self._header)
             writer.writerow(row)
 
@@ -77,6 +78,22 @@ def count_language_constructs(fm: FeatureModel, csv_entry: dict[str, int]) -> No
     csv_entry[CSVHeader.STRING_CONSTRAINTS.value] = sum(op in [ASTOperation.LEN] for ctc in fm.get_aggregations_constraints() for op in ctc.ast.get_operators())
 
 
+def count_imports(fm_filepath: str, csv_entry: dict[str, int]) -> None:
+    n_imports = 0
+    has_imports = False
+    with open(fm_filepath, encoding='utf-8') as file: 
+        lines = file.readlines()
+        for i, line in enumerate(lines, 1):
+            if 'imports' in line:
+                has_imports = True
+                continue
+            if 'features' in line:
+                break
+            if has_imports:
+                n_imports += 1 if line.strip() != '' else 0
+        csv_entry[CSVHeader.IMPORTS.value] = n_imports
+
+
 def main(fm_filepath: str) -> dict[str, Any]:
     path = pathlib.Path(fm_filepath)
     filename = path.stem
@@ -95,13 +112,13 @@ def main(fm_filepath: str) -> dict[str, Any]:
         return csv_entry
     
     count_language_constructs(fm, csv_entry)
-    LOGGER.debug(f'Done for model {fm_filepath}.')
+    count_imports(fm_filepath, csv_entry)
     return csv_entry
 
 
 def main_dir(dirpath: str) -> None:
     csv_writer = CSVWriter(CSV_FILE_RESULTS, [h.value for h in CSVHeader])
-    with open(CSV_FILE_RESULTS, 'r') as results_file:
+    with open(CSV_FILE_RESULTS, 'r', encoding='utf-8') as results_file:
         content = results_file.read()
     total_models = 0
     models_filepaths = get_filepaths(dirpath, ['uvl'])

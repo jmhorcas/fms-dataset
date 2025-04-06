@@ -1,0 +1,88 @@
+namespace Agile_Strategy
+features
+ Agile_Strategy {extended_ true, abstract true}
+  mandatory
+   Diagnosis
+    or
+     Business_Guarantee
+     Business_Utility
+     Certainty
+     Effectiveness
+     Efficiency
+   Doing
+    mandatory
+     Doing_Cycle_Time
+      alternative
+       Doing_Months
+       Doing_Weeks
+       Doing_Days
+       Doing_Hours
+       Doing_Minutes
+    optional
+     Discovery
+      or
+       Understand
+       Define
+       Ideate
+       Decide
+       Prototype
+       Validate
+     Development
+      or
+       Analysis_Design
+       Code
+       Build
+       Test
+     Operations
+      or
+       Release
+       Deploy
+       Operate
+       Monitor
+  optional
+   Project_Managing
+    or
+     Plan
+      alternative
+       Activities_Time_Resources
+       Scope
+     Do
+      mandatory
+       Do_Cycle_Time
+        alternative
+         Do_Months
+         Do_Weeks
+         Do_Days
+         Do_Hours
+         Do_Minutes
+     Check
+      or
+       Objectives
+       Software
+       Services
+     Act
+   Improving
+    or
+     Outcome
+     Process
+   Enabling
+    or
+     User_Experience
+     Quality
+     Security
+     Availability
+     Continuity
+     Capacity
+constraints
+ Certainty => Discovery
+ Business_Utility => Development
+ Business_Guarantee => Operations
+ Efficiency => Effectiveness
+ Effectiveness => Plan
+ Effectiveness => Check
+ Efficiency => Act
+ Discovery => Activities_Time_Resources
+ Development => Scope
+ Objectives => Discovery
+ Software => Development
+ Services => Operations

@@ -1,0 +1,147 @@
+namespace "Smart Governance Platform"
+features
+	"Smart Governance Platform"
+		mandatory
+			"E-Collaboration Common Services"
+				mandatory
+					Collaboration
+					"Decision-Making"
+				optional
+					Assessment
+						or
+							"Results Assessment"
+							"Stakeholder Assessment"
+					"Technical Capabilities" {abstract true}
+						optional
+							"DA Support"
+							"IR Capability"
+							"KM Support"
+							"DM Support"
+								or
+									"Individual DM"
+									"Group DM"
+									Consensus
+									"Automated DM"
+							"AI Capability"
+							"Learning Capability"
+					Guarantees {abstract true}
+						optional
+							Transparency
+							"Ethics Control"
+							"Legal Control"
+			"Smart Governance Services"
+				mandatory
+					"E-Collaboration Model"
+						mandatory
+							"E-Collaboration Process"
+								mandatory
+									"Process Specific" {abstract true}
+										mandatory
+											"Creation Mode"
+												or
+													Organization
+													Collaborator
+													"Smart Agent"
+													Event
+											Access
+												alternative
+													Open
+													Restricted
+													Census
+													"Collaborator Type"
+										optional
+											Delegation
+											Representation
+											Anonymous
+								optional
+									"Decision Stage"
+										mandatory
+											"Decision Type" {abstract true}
+												alternative
+													Simple
+													Multiple
+													"Multiple Ordered"
+										optional
+											Mandatory
+											Binding
+											Weighted
+									"Assessment Stage"
+									Notification
+									"Process Type" {abstract true}
+										alternative
+											"Urban Process"
+											"Urban Project"
+											Proposal {abstract true}
+												alternative
+													"Policy Proposal"
+													"Normative Proposal"
+													"Otherl Proposal"
+											Deliberation
+											"Instrument Making" {abstract true}
+												alternative
+													"Policy Making"
+													"Normative Making"
+													Budgeting
+											"Solution Implementation"
+											Consultation {abstract true}
+												alternative
+													Survey
+													"Citizen Forum"
+													"Participatory Consultation"
+														optional
+															Referendum
+											"Assessment Process"
+									Debate
+									Meeting
+						optional
+							Agile
+							Qualified
+							"Multi-Level"
+							"Multi-Organization"
+							"Data-Driven"
+							"Project-Oriented"
+							"Networked Processess"
+							"Smart Assistance"
+					"Systems Integration"
+						mandatory
+							"Organizational Services"
+								optional
+									"E-Notification"
+									"E-Census"
+									"E-Voting"
+									"E-Collaboration"
+						optional
+							"External Services"
+								optional
+									"Meeting Service"
+									"Messaging Service"
+									"E-Mail Service"
+				optional
+					"Urban Process Services"
+					"Urban Project Services"
+		optional
+			"Multi-Tenant"
+			"Graphical User Interface"
+				or
+					"Web Platform"
+					"Mobile App"
+constraints
+	"Urban Project Services" => "Project-Oriented"
+	"Multi-Organization" => "Multi-Tenant" & "Networked Processess"
+	"Data-Driven" => "DA Support"
+	"Smart Assistance" => "AI Capability" & "DM Support"
+	"DA Support" => "AI Capability"
+	"KM Support" => "AI Capability"
+	"Learning Capability" => "AI Capability" & "DM Support"
+	"Ethics Control" => "KM Support"
+	"Legal Control" => "KM Support"
+	"Urban Process Services" => "Urban Project Services"
+	"Decision Stage" => "DM Support"
+	Qualified => Weighted
+	Referendum => Binding
+	"Assessment Stage" => "Decision Stage" & Assessment
+	Transparency => Notification
+	Proposal | Consultation | Budgeting => "Decision Stage"
+	Deliberation | "Participatory Consultation" => Debate
+	Deliberation | "Instrument Making" | Consultation => Event | Organization
+	"Assessment Process" => "Assessment Stage"

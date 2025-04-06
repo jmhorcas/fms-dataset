@@ -1,0 +1,71 @@
+namespace VisualComponents
+features
+	VisualComponents {abstract}
+		mandatory
+			PrimaryComponents {abstract}
+				mandatory
+					DataSet {abstract}
+						mandatory
+							InformationType {abstract}
+								alternative
+									CircleMark {abstract}
+							Alignment {abstract}
+								alternative
+									Left {abstract}
+									Center {abstract}
+									Right {abstract}
+							HighlightValues {abstract}
+							BackgroundColor {abstract}
+								alternative
+									Hue {abstract}
+										alternative
+											Gray
+											Blue
+											Orange
+											Green
+											Pink
+											Red
+											Brown
+											Purple
+											Yellow
+									Intensity {abstract}
+										alternative
+											Light
+											Medium
+											DarkBright
+				alternative
+					MissingValues {abstract}
+						or
+							UnknownValues {abstract}
+								mandatory
+									LargeDash
+							ValuesNotAvailable {abstract}
+								mandatory
+									NA
+							NotApplicable {abstract}
+								mandatory
+									LargeBlackDot
+			SecondaryComponents {abstract}
+				mandatory
+					FootNotes {abstract}
+					Orientation {abstract}
+						alternative
+							Horizontal
+							Vertical
+					Annotations {abstract}
+			NonDataComponents {abstract}
+				mandatory
+					Rules {abstract}
+						or
+							Bottom
+							Middle
+							Top
+					StrippedCells
+					CellVerticalSeparation {abstract}
+						alternative
+							Min
+							Medium
+							Max
+constraints
+	SingleSetOfCategories => Unidirectional
+	SingleCategoricalItems => Unidirectional

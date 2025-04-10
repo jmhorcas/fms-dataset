@@ -5,7 +5,7 @@ imports
     Bibra2025_Dressings
     Bibra2025_FinalTouch
 features
-    Salad {constraint Price == 10.95 + sum(Salad, Price)}
+    Salad
         mandatory
             Bases cardinality [1..2]
                 mandatory
@@ -38,3 +38,4 @@ constraints
     !Bibra2025_FinalTouch.Chives
     !Bibra2025_FinalTouch.Coriander
     !Bibra2025_FinalTouch."Dried oregano"
+    Salad.Price == 10.95 + sum(Salad, Price)

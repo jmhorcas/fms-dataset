@@ -6,7 +6,7 @@ imports
     Bibra2025_FinalTouch
 
 features
-    Wraps {constraint Price == 9.95 + sum(Wraps, Price)}
+    Wraps
         mandatory
             Temperature {abstract}
                 alternative
@@ -41,3 +41,4 @@ constraints
     !Bibra2025_FinalTouch.Dates
     !Bibra2025_FinalTouch.Furikake
     !Bibra2025_FinalTouch."Semi-dried tomato"
+    Wraps.Price == 9.95 + sum(Wraps, Price)

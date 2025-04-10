@@ -6,7 +6,7 @@ imports
     Bibra2025_Dressings
     Bibra2025_FinalTouch
 features
-    Pokebowls {constraint Price == sum(Pokebowls, Price)}
+    Pokebowls
         mandatory
             Size {abstract}
                 alternative
@@ -50,3 +50,4 @@ constraints
     !Bibra2025_Dressings."Homemade hummus"
     !Bibra2025_FinalTouch.Dates
     !Bibra2025_FinalTouch."Semi-dried tomato"
+    Pokebowls.Price == sum(Pokebowls, Price)

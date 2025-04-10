@@ -1,8 +1,10 @@
 imports
-    IngredientsBausatz2025 as Ingredients
+    Bausatz2025_Ingredients as Ingredients
 features
     "Pizza Bausatz"
         mandatory
+            Integer "Ticket number"
+            Integer "Table number"
             "Pizza Options" {abstract}
                 alternative
                     "Large Pizza" {Allergen {Gluten}}
@@ -21,4 +23,8 @@ constraints
     !Ingredients.Mayonnaise
     !Ingredients.Mustard
     !Ingredients.Pickles
-    !Ingredients."Steak Tartare Sauce"    
+    !Ingredients."Steak Tartare Sauce"
+    !Ingredients."Jalapeños"
+    !Ingredients."Crispy fried onions"
+    !Ingredients."Sour cream"
+    !Ingredients."Kidney beans"

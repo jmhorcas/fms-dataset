@@ -1,8 +1,10 @@
 imports
-    IngredientsBausatz2025 as Ingredients
+    Bausatz2025_Ingredients as Ingredients
 features
     "Salad Bausatz"
         mandatory
+            Integer "Ticket number"
+            Integer "Table number"
             "Salad Options" {abstract}
                 alternative
                     "Large Salad"
@@ -16,8 +18,12 @@ features
                     "Balsamic Vinegar & Oil" {Allergen {Sulfitos}}
                     "Balsamic Vinegar & Pumpkin Seed Oil" {Allergen {Sulfitos}}
                     "Balsamic Vinegar & Olive Oil" {Allergen {Sulfitos}}
-                    "American Dressing" {Allergen {Egg, Soy, Milk, Mustard}}
-                    "Herb Dressing" {note 'Italian', Allergen {Egg, Soy, Milk, Mustard}}
-                    "Yogurt Dressing" {Allergen {Egg, Soy, Milk, Mustard}}
+                    "American Dressing" {Allergen {Egg, Soy, Lactose, Mustard}}
+                    "Herb Dressing" {note 'Italian', Allergen {Egg, Soy, Lactose, Mustard}}
+                    "Yogurt Dressing" {Allergen {Egg, Soy, Lactose, Mustard}}
 constraints
     Ingredients."Green Salad"
+    !Ingredients."Jalapeños"
+    !Ingredients."Crispy fried onions"
+    !Ingredients."Sour cream"
+    !Ingredients."Kidney beans"

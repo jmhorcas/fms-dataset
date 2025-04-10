@@ -11,7 +11,9 @@ features
                     "Brown Bread" {Allergen {Gluten}}
             Cheese {Allergen {Lactose}}
             Ketchup
-            Ingredients.Ingredients
+            "4Ingredients" cardinality [4..40] {abstract, note 'each additional ingredient costs extra'}
+                mandatory
+                    Ingredients.Ingredients
 constraints
     !Ingredients.Arugula
     !Ingredients."Barbecue Sauce"

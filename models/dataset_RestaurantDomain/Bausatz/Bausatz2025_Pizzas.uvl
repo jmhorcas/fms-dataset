@@ -13,7 +13,9 @@ features
             "Tomato Sauce"
             Cheese {note 'no analog cheese'}
             Oregano
-            Ingredients.Ingredients
+            "4Ingredients" cardinality [4..40] {abstract, note 'each additional ingredient costs extra'}
+                mandatory
+                    Ingredients.Ingredients
 constraints
     !Ingredients."Barbecue Sauce"
     !Ingredients.Carrots

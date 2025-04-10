@@ -10,10 +10,12 @@ features
                     Large {note '3 eggs – organic free-range, AUT'}
                     Small {note '2 eggs – organic free-range, AUT'}
             "Piece of bread" {Allergen {Gluten}}
-            "4Ingredients" cardinality [4..35] {note 'each additional ingredient costs extra'}
-                Ingredients.Ingredients
-            "3Ingredients" cardinality [3..35] {note 'each additional ingredient costs extra'}
-                Ingredients.Ingredients
+            "4Ingredients" cardinality [4..35] {abstract, note 'each additional ingredient costs extra'}
+                mandatory
+                    Ingredients.Ingredients
+            "3Ingredients" cardinality [3..35] {abstract, note 'each additional ingredient costs extra'}
+                mandatory
+                    Ingredients.Ingredients
 constraints
     Large => "4Ingredients"
     Small => "3Ingredients"

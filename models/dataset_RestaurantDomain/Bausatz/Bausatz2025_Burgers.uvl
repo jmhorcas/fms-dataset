@@ -13,7 +13,9 @@ features
             "Homemade Sauce" {Allergen {Gluten, Egg, Lactose, Celery, Mustard}}
             "French Fries"
             Ketchup {Allergen {Gluten, Mustard}}
-            Ingredients.Ingredients
+            "4Ingredients" cardinality [4..45] {abstract, note 'each additional ingredient costs extra'}
+                mandatory
+                    Ingredients.Ingredients
 constraints
     !Ingredients."Basil Pesto"
     !Ingredients.Carrots

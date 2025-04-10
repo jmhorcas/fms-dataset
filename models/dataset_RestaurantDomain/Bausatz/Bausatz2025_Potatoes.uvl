@@ -11,7 +11,9 @@ features
                     "Small Potato Pan" {Allergen {Gluten}}
                     "Mini Potato Pan" {Allergen {Gluten}}
             "Homemade Cream Sauce" {Allergen {Lactose}}
-            Ingredients.Ingredients
+            "4Ingredients" cardinality [4..43] {abstract, note 'each additional ingredient costs extra'}
+                mandatory
+                    Ingredients.Ingredients
 constraints
     !Ingredients.Arugula
     !Ingredients."Barbecue Sauce"

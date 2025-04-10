@@ -1,5 +1,5 @@
 features
-    Ingredients {abstract}, note 'each additional ingredient costs extra'}
+    Ingredients {abstract}
         alternative
             Anchovies {Allergen {Fish}}
             Artichokes

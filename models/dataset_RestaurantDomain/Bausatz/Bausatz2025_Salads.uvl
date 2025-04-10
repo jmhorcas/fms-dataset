@@ -9,7 +9,9 @@ features
                 alternative
                     "Large Salad"
                     "Small Salad"
-            Ingredients.Ingredients
+            "4Ingredients" cardinality [4..34] {abstract, note 'each additional ingredient costs extra'}
+                mandatory
+                    Ingredients.Ingredients
             Dressings
                 alternative
                     "Vinegar & Oil" {Allergen {Sulfitos}}

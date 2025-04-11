@@ -1,5 +1,5 @@
 features
-    Dressings
+    Dressings {abstract}
         alternative
             "Honey mustard vinaigrette"
             "Extra virgin olive oil, vinegar & salt" {vegan}

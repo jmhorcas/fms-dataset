@@ -1,5 +1,5 @@
 features
-    Ingredients
+    Ingredients {abstract}
         alternative
             "Organic tomato"
             "Cherry tomatoes"

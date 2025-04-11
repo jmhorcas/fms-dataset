@@ -1,5 +1,5 @@
 features
-    Proteins
+    Proteins {abstract}
         alternative
             Chicken
             "Teriyaki chicken"

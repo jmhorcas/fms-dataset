@@ -3,7 +3,7 @@ imports
 features
     "Drink Mix Bausatz" {abstract}
         mandatory
-            String name
+            String Name
             Integer "Ticket number"
             Integer "Table number"
             Drink {abstract}
@@ -18,7 +18,7 @@ features
                 mandatory
                     Spirits.Spirits
         mandatory
-            Syrup {abstract, Volume {value '1', unit 'cl'}}
+            Syrup {abstract, Volume {value 1, unit 'cl'}}
                 alternative
                     Pineapple
                     Banana
@@ -32,7 +32,7 @@ features
                     "Passion fruit"
                     Vanilla
                     "Lemon juice"
-            Mixer {abstract, Volume {value '125', unit 'ml'}}
+            Mixer {abstract, Volume {value 125, unit 'ml'}}
                 alternative
                     "Pineapple juice"
                     "Apple juice"
@@ -47,13 +47,16 @@ features
                     Soda
                     Tonic
         optional
-            "RedBull Upgrade" {abstract, Volume {value '0.25', unit 'l'}, note 'can of your choice for an additional fee'}
+            "RedBull Upgrade" {abstract, Volume {value 0.25, unit 'l'}, note 'can of your choice for an additional fee'}
                 alternative
                     "Red Bull Sugarfree"
-                    "Red Bull Edition" {note 'various types – ask the crew!'}
+                    "Red Bull Edition" {note 'various types, ask the crew'}
                     "Red Bull Simply Cola" {Allergen {Mustard}}
                     "Red Bull ORGANICS"
 constraints
     Large => "3Spirits"
     Small => "2Spirits"
     "3Spirits" => !"2Spirits"
+    "Ticket number" > 0
+    "Table number" > 0
+    len(Name) > 0

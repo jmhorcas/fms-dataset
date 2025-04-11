@@ -1,7 +1,7 @@
 namespace Pizza
 
 features
-	Pizza {abstract}
+	Pizza {abstract, Units {Price 'euro', size 'cm'}}
 		mandatory
 			Ingredients {abstract}
 				or
@@ -49,20 +49,26 @@ features
 					"French fries"
 			Size {abstract}
 				alternative
-					Mini
-					Medium
-					Big
+					Mini {size 24, Price 6.25}
+					Medium {size 33, Price 10.95}
+					Big {size 50, Price 21.95}
 		optional
-			"Half & Half"
+			"Half & Half" {note 'extra cost'}
 			"Double base"
 			"Gluten free"
 			"Closed pizza"
 				alternative
 					"Traditional calzone"
 					Chapata
-					Bombaa
+					Bombaa {Price 1.00}
 					Strudell
 constraints
 	"Gluten free" => ! Big & ! "Closed pizza"
 	"Closed pizza" => ! "Gluten free"
 	"Closed pizza" => Medium | Big
+	"Double base" => Medium | Big
+	Pizza.Price == sum(Pizza, Price)
+	"Gluten free" & Mini => Pizza.Price == Pizza.Price + 0.50
+	"Gluten free" & Medium => Pizza.Price == Pizza.Price + 1.00
+	"Double base" & Medium => Pizza.Price == Pizza.Price + 1.00
+	"Double base" & Big => Pizza.Price == Pizza.Price + 2.00

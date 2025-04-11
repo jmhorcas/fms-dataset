@@ -57,3 +57,6 @@ features
                         alternative
                             "Double Cheddar" {Price 1.60, Allergen {Lactose}}
                             "Triple Cheddar" {Price 2.40, Allergen {Lactose}}
+constraints
+    "Ticket number" > 0
+    "Table number" > 0

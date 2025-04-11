@@ -6,25 +6,25 @@ imports
     Bibra2025_Dressings
     Bibra2025_FinalTouch
 features
-    Pokebowls
+    Pokebowls {abstract}
         mandatory
             Size {abstract}
                 alternative
                     Medium {Price 11.95}
                     Big {Price 14.95}
-            Bases cardinality [1..2]
+            Bases cardinality [1..2] {abstract}
                 mandatory
                     Bibra2025_Bases.Bases
-            Ingredients cardinality [1..4]
+            Ingredients cardinality [1..4] {abstract}
                 mandatory
                     Bibra2025_Ingredients.Ingredients
-            Proteins cardinality [1..1]
+            Proteins cardinality [1..1] {abstract}
                 mandatory
                     Bibra2025_Proteins.Proteins
-            Dressings cardinality [1..1] 
+            Dressings cardinality [1..1] {abstract}
                 mandatory
                     Bibra2025_Dressings.Dressings
-            "Final Touch" cardinality [1..2] 
+            "Final Touch" cardinality [1..2] {abstract}
                 mandatory
                     Bibra2025_FinalTouch."Final Touch"
         optional

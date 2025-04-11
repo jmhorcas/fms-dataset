@@ -33,3 +33,5 @@ constraints
     !Ingredients.Zucchini
     !Ingredients."Kidney beans"
     !Ingredients."Bell Pepper"
+    "Ticket number" > 0
+    "Table number" > 0

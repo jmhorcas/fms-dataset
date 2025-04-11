@@ -1,5 +1,5 @@
 features
-    "Final Touch"
+    "Final Touch" {abstract}
         alternative
             "Sesame mix"
             "Crunchy corn"

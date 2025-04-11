@@ -49,3 +49,5 @@ features
 					Vinaigrette
 constraints
 	Salad.Price == sum(Salad, Price) + 9.95
+	Table > 0
+	len("Your name") > 0

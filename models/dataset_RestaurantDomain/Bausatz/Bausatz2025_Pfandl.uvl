@@ -10,7 +10,7 @@ features
                     Large
                     Small
                     Mini
-            "Spätzle" {Allergen {Gluten, Egg}}
+            "Spatzle" {Allergen {Gluten, Egg}}
             "Cheese" {note 'no imitation cheese', Allergen {Lactose}} 
             "Homemade base sauce" {Allergen {Lactose}}
             Sauce {abstract}
@@ -29,7 +29,7 @@ constraints
     !Ingredients."Crispy fried onions"
     !Ingredients."Green Salad"
     !Ingredients."Gold Bears"
-    !Ingredients."Jalapeños"
+    !Ingredients.Jalapenyos
     !Ingredients.Mayonnaise
     !Ingredients."Kidney Beans"
     !Ingredients.Mozzarella
@@ -38,3 +38,5 @@ constraints
     !Ingredients.Paprika
     !Ingredients."Sour cream"
     !Ingredients."Steak Tartare Sauce"
+    "Ticket number" > 0
+    "Table number" > 0

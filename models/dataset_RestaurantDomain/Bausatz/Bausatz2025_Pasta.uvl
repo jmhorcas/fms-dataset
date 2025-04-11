@@ -36,7 +36,7 @@ constraints
     !Ingredients.Egg
     !Ingredients."Green Salad"
     !Ingredients."Gold Bears"
-    !Ingredients."Jalapeños"
+    !Ingredients.Jalapenyos
     !Ingredients.Mayonnaise
     !Ingredients."Kidney Beans"
     !Ingredients.Mozzarella
@@ -51,3 +51,5 @@ constraints
     !Ingredients."Sunflower Seeds"
     !Ingredients."Whipped Cream"
     !Ingredients."Bell Pepper"
+    "Ticket number" > 0
+    "Table number" > 0

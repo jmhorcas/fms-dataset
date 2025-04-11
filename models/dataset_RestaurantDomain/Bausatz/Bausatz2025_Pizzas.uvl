@@ -26,8 +26,10 @@ constraints
     !Ingredients.Mustard
     !Ingredients.Pickles
     !Ingredients."Steak Tartare Sauce"
-    !Ingredients."Jalapeños"
+    !Ingredients.Jalapenyos
     !Ingredients."Crispy fried onions"
     !Ingredients."Sour cream"
     !Ingredients."Kidney beans"
     !Ingredients."Bell Pepper"
+    "Ticket number" > 0
+    "Table number" > 0

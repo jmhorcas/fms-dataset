@@ -7,8 +7,8 @@ features
             Integer "Table number"
             Size {abstract}
                 alternative
-                    Large {note '3 eggs – organic free-range, AUT'}
-                    Small {note '2 eggs – organic free-range, AUT'}
+                    Large {note '3 eggs, organic free-range, AUT'}
+                    Small {note '2 eggs, organic free-range, AUT'}
             "Piece of bread" {Allergen {Gluten}}
         optional
             "4Ingredients" cardinality [4..35] {abstract, note 'each additional ingredient costs extra'}
@@ -32,7 +32,7 @@ constraints
     !Ingredients."Emmental Cheese"
     !Ingredients."Green Salad"
     !Ingredients."Gold Bears"
-    !Ingredients."Jalapeños"
+    !Ingredients.Jalapenyos
     !Ingredients.Mayonnaise
     !Ingredients.Mozzarella
     !Ingredients.Mustard
@@ -45,3 +45,5 @@ constraints
     !Ingredients."Steak Tartare Sauce"
     !Ingredients."Whipped Cream"
     !Ingredients."Bell Pepper"
+    "Ticket number" > 0
+    "Table number" > 0

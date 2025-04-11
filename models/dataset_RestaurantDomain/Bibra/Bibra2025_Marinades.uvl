@@ -1,5 +1,5 @@
 features
-    Marinades
+    Marinades {abstract}
         alternative
             "Soy sauce and sesame oil" {vegan}
             Sriracha  {spicy, vegan}

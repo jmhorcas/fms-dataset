@@ -3,7 +3,7 @@ imports
 features
     "Burger Bausatz" {abstract}
         mandatory
-            String name
+            String Name
             Integer "Ticket number"
             Integer "Table number"
             "Burger Options" {abstract}
@@ -31,8 +31,11 @@ constraints
     !Ingredients.Zucchini
     !Ingredients."Gold Bears"
     !Ingredients."Whipped Cream"
-    !Ingredients."Jalapeños"
+    !Ingredients.Jalapenyos
     !Ingredients."Crispy fried onions"
     !Ingredients."Sour cream"
     !Ingredients."Kidney beans"
     !Ingredients."Bell Pepper"
+    "Ticket number" > 0
+    "Table number" > 0
+    len(Name) > 0

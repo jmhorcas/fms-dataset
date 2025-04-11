@@ -9,7 +9,7 @@ features
             "Exakt Vodka"
             Gin
             "Havana Club"
-            "Jägermeister"
+            "Jagermeister"
             "Jim Beam Bourbon" {Allergen {Gluten}}
             "Jim Beam Honey" {Allergen {Gluten}}
             Malibu

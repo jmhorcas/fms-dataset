@@ -45,3 +45,6 @@ features
 					"Yogurt Sauce"
 					"Honey & Mustard Vinaigrette"
 					Vinaigrette
+constraints
+	Table > 0
+	len("Your name") > 0

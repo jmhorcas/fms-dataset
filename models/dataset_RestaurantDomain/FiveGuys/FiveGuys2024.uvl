@@ -1,5 +1,5 @@
 features
-	FFRestaurant {abstract, Units {Price '€', Volume 'cl', Alcohol '%'}}
+	FFRestaurant {abstract, Units {Price 'euro', Volume 'cl', Alcohol '%'}}
 		optional
 			Burger {abstract}
 				mandatory
@@ -12,7 +12,7 @@ features
 					Drinks {abstract}
 			Dogs {abstract}
 				mandatory
-					"Hot Dog 100% Beef" {Price 6.00}
+					"Hot Dog" {Price 6.00}
 				optional
 					"Cheese Dog" {Price 1.00}
 					"Bacon Dog" {Price 1.50}
@@ -59,7 +59,7 @@ features
 							"BBQ Sauce"
 			Milkshakes {Price 6.25}
 				mandatory
-					"Mix-ins" {abstract}
+					"Mixins" {abstract}
 						or
 							Popcorn
 							Vanilla
@@ -89,7 +89,7 @@ constraints
 	Little => Cheese.Price == 1.25
 	!Little & Cheese & Bacon => Hamburger.Price == Hamburger.Price - 0.50
 	Little & Cheese & Bacon => Hamburger.Price == Hamburger.Price - 0.75
-	"Cheese Dog" & "Bacon Dog" => "Hot Dog 100% Beef".Price == "Hot Dog 100% Beef".Price - 0.50
+	"Cheese Dog" & "Bacon Dog" => "Hot Dog".Price == "Hot Dog".Price - 0.50
 	Burger.Price == sum(Burger, Price)
 	Dogs.Price == sum(Dogs, Price)
 	Sandwiches.Price == sum(Sandwiches, Price)

@@ -40,3 +40,6 @@ features
 							"Organic soy bread"
 							"Organic whole grain bread"
 							"Gluten-free bread"
+constraints
+	Table > 0
+	len("Your name") > 0

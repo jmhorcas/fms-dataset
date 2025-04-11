@@ -1,7 +1,7 @@
 imports
     Bausatz2025_Ingredients as Ingredients
 features
-    "Toasted Bread Bausatz"
+    "Toasted Bread Bausatz" {abstract}
         mandatory
             Integer "Ticket number"
             Integer "Table number"
@@ -32,3 +32,4 @@ constraints
     !Ingredients."Whipped Cream"
     !Ingredients.Zucchini
     !Ingredients."Kidney beans"
+    !Ingredients."Bell Pepper"

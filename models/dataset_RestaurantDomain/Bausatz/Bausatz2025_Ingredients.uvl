@@ -6,6 +6,7 @@ features
             Arugula {note 'fresh'}
             "Basil Pesto" {Allergen {Lactose, Nuts}}
             "Barbecue Sauce" {Allergen {Mustard}}
+            "Bell pepper" {note 'fresh'}
             "Blue Cheese" {note 'Gorgonzola', Allergen {Lactose}}
             "Brie Cheese" {Allergen {Lactose}}
             Broccoli

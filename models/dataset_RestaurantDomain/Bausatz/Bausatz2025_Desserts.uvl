@@ -1,5 +1,5 @@
 features
-    "Dessert Bausatz"
+    "Dessert Bausatz" {abstract}
         mandatory
             Base {abstract}
                 alternative

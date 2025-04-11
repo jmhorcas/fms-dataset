@@ -1,7 +1,7 @@
 imports
     Bausatz2025_Ingredients as Ingredients
 features
-    "Burger Bausatz"
+    "Burger Bausatz" {abstract}
         mandatory
             String name
             Integer "Ticket number"
@@ -35,3 +35,4 @@ constraints
     !Ingredients."Crispy fried onions"
     !Ingredients."Sour cream"
     !Ingredients."Kidney beans"
+    !Ingredients."Bell Pepper"

@@ -1,26 +1,31 @@
 imports
     Bausatz2025_Ingredients as Ingredients
 features
-    "Scrambled Eggs Bausatz" {abstract}
+    "Pasta Bausatz" {abstract}
         mandatory
             Integer "Ticket number"
             Integer "Table number"
+            Pasta {abstract}
+                alternative
+                    Spaghetti  {Allergen {Gluten}}
+                    "Penne rigate" {Allergen {Gluten}}
+                    "Tortellini (meat)" {Allergen {Gluten, Egg}}
+                    "Tortellini (spinach-cheese)" {Allergen {Gluten, Lactose}}
+                    "Tortellini (porcini mushrooms)" {Allergen {Gluten, Lactose, Sulphites}}
             Size {abstract}
                 alternative
-                    Large {note '3 eggs – organic free-range, AUT'}
-                    Small {note '2 eggs – organic free-range, AUT'}
-            "Piece of bread" {Allergen {Gluten}}
-        optional
+                    Large
+                    Small
+            "Homemade base sauce" {Allergen {Lactose}}
+            Basil
+            Sauce {abstract}
+                or
+                    "Tomato sauce"
+                    "Cream sauce" {Allergen {Lactose}}
             "4Ingredients" cardinality [4..35] {abstract, note 'each additional ingredient costs extra'}
                 mandatory
                     Ingredients.Ingredients
-            "3Ingredients" cardinality [3..35] {abstract, note 'each additional ingredient costs extra'}
-                mandatory
-                    Ingredients.Ingredients
 constraints
-    Large => "4Ingredients"
-    Small => "3Ingredients"
-    "4Ingredients" => !"3Ingredients"
     !Ingredients.Arugula
     !Ingredients."Barbecue Sauce"
     !Ingredients.Capers
@@ -29,19 +34,20 @@ constraints
     !Ingredients.Cucumber
     !Ingredients."Crispy fried onions"
     !Ingredients.Egg
-    !Ingredients."Emmental Cheese"
     !Ingredients."Green Salad"
     !Ingredients."Gold Bears"
     !Ingredients."Jalapeños"
     !Ingredients.Mayonnaise
+    !Ingredients."Kidney Beans"
     !Ingredients.Mozzarella
     !Ingredients.Mustard
     !Ingredients.Pickles
-    !Ingredients.Pineapple
-    !Ingredients."Runner Beans"
-    !Ingredients.Seafood
+    !Ingredients."Pumpkin Seeds"
+    !Ingredients.Salami
+    !Ingredients.Snails
     !Ingredients."Spicy Salami"
     !Ingredients."Sour cream"
     !Ingredients."Steak Tartare Sauce"
+    !Ingredients."Sunflower Seeds"
     !Ingredients."Whipped Cream"
     !Ingredients."Bell Pepper"

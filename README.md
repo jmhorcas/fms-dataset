@@ -1,14 +1,14 @@
 # Table of Contents
 - [Table of Contents](#table-of-contents)
-- [Bringing to fruition the complete elimination of cross-tree constraints to exploit the parallel analysis of feature models](#bringing-to-fruition-the-complete-elimination-of-cross-tree-constraints-to-exploit-the-parallel-analysis-of-feature-models)
+- [Challenges of modeling variability in practice with UVL: A Dataset of real-world product lines](#challenges-of-modeling-variability-in-practice-with-uvl-a-dataset-of-real-world-product-lines)
   - [Artifact description](#artifact-description)
+  - [Classification of FMs](#classification-of-fms)
   - [How to use it](#how-to-use-it)
     - [Requirements](#requirements)
     - [Download and installation](#download-and-installation)
     - [Execution of the scripts](#execution-of-the-scripts)
-    - [Additional scripts](#additional-scripts)
   
-
+  
 # Challenges of modeling variability in practice with UVL: A Dataset of real-world product lines
 This repository contains all the resources and artifacts that support the paper entitled "Dataset of feature models from the real world manually synthesized." submmited to the 29th International Systems and Software Product Line Conference (SPLC 2025).
 
@@ -25,6 +25,23 @@ The artifact includes:
   - [stats_language_constructs.py](stats_language_constructs.py): Read the .csv file generated with the previous `count_language_constructs` script, and show the statistical information of the dataset. That is, for each language construct level it shows the mean, standard deviation, count and percentage of those constructs according to the number of models in the dataset.
 3. The [results of our evaluation](evaluation/) containing all .csv result files and [instructions to replicate the experiments](#execution-of-the-scripts).
 
+
+## Classification of FMs
+
+| Business   |  Portfolio type                         | #Brochures | #UVL FMs | 
+| ---------- | --------------------------------------- | ---------- | -------- | 
+| Business01 | Fully customizable menus                | 12         | 14       | 
+| Business02 | Fully customizable menus                | 3          | 10       | 
+| Business03 | Products with implicit variation points | 1          | 1        |
+| Business04 | Product listings                        | 1          | 1        | 
+| Business05 | Fully customizable menus                | 4          | 4        | 
+| Business06 | Product listings                        | 1          | 1        | 
+| Business07 | Product listings                        | 5          | 1        | 
+| Business08 | Fully customizable menus                | 3          | 3        | 
+| Business09 | Product listings                        | 1          | 1        | 
+| Business10 | Product listings                        | 1          | 3        | 
+| Business10 | Products with implicit variation points | 1          | 1        | 
+| **TOTAL: 10 different business**  |                  | **29**     | **40**   | 
 
 ## How to use it
 

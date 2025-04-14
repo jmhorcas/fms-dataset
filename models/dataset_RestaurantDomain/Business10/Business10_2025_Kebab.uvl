@@ -41,3 +41,5 @@ constraints
     "Grilled durum" | "Grilled taco" => !Vegetables
     "Grilled durum" | "Grilled taco" => !Vegetables
     Cheese <=> ("Grilled durum" | "Grilled taco")
+    Shawarma | Lahmacun => Fill
+    Fill => !Cheese

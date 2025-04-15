@@ -1,9 +1,9 @@
 imports
-    JustSalad2025_Salad as Salad
-    JustSalad2025_Bowl as Bowls
-    JustSalad2025_Wraps as Wraps
+    Business11_2025_Salad as Salad
+    Business11_2025_Bowl as Bowls
+    Business11_2025_Wraps as Wraps
 features
-    JustSalad {abstract, version '2025', Price {units 'dolar'}, Calories {units 'g'}, TotalFat {units 'g'}, SaturatedFat {units 'g'}, TransFat {units 'g'}, Cholesterol {units 'mg'}, Sodium {units 'mg'}, TotalCarbs {units 'g'}, DietaryFiber {units 'g'}, Sugars {units 'g'}, Protein {units 'g'} } 
+    Business11 {abstract, version '2025', Price {units 'dolar'}, Calories {units 'g'}, TotalFat {units 'g'}, SaturatedFat {units 'g'}, TransFat {units 'g'}, Cholesterol {units 'mg'}, Sodium {units 'mg'}, TotalCarbs {units 'g'}, DietaryFiber {units 'g'}, Sugars {units 'g'}, Protein {units 'g'} } 
         optional
             Salad cardinality [1..*]
             Bowl cardinality [1..*]

@@ -17,7 +17,7 @@ This repository contains all the resources and artifacts that support the paper 
 We present a dataset of feature models (FMs) of the restaurant business domain using the full expressiveness power of the [Universal Variability Language (UVL)](https://universal-variability-language.github.io/).
 
 The artifact includes:
-1. The FM dataset with XXX model in UVL.
+1. The FM dataset with 53 feature models in UVL extracted from 30 brochures of 11 different real-world business.
 2. The Python scripts to replicate the experiments of the paper. This includes the following scripts:
   - [count_complexity.py](count_complexity.py): Read an FM in UVL (.uvl) or a directory with a dataset of FMs and generate a `complexity.csv` file with the number of features and the estimated number of configurations for each model.
   - [stats_complexity.py](stats_complexity.py): Read the .csv file generated with the previous `count_complexity` script, and show the statistical information of the dataset to plot a boxplot graph. That is, the median, the average, the lower and upper quartile, the lower and upper whisker, and the outliers.
@@ -41,7 +41,8 @@ The artifact includes:
 | Business09 | Product listings                        | 1          | 1        | 
 | Business10 | Product listings                        | 1          | 3        | 
 | Business10 | Products with implicit variation points | 1          | 1        | 
-| **TOTAL: 10 different business**  |                  | **29**     | **40**   | 
+| Business11 | Fully customizable menus                | 1          | 13       | 
+| **TOTAL: 11 different business**  |                  | **30**     | **53**   | 
 
 ## How to use it
 

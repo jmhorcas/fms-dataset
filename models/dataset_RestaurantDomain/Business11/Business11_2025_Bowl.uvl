@@ -1,0 +1,19 @@
+imports
+    JustSalad2025_Bases as Bases
+    JustSalad2025_Essentials as Essentials
+    JustSalad2025_Proteins as Proteins
+    JustSalad2025_Dressings as Dressing
+features
+    Bowl 
+        mandatory
+            Bases 
+            Sides 
+                mandatory
+                   Essentials.Ingredients
+            Dressings
+        optional
+            Proteins
+constraints
+    !Ingredients."Basmati Rice"
+    !Ingredients."Lundberg Basmati Rice"
+    !Ingredients."Regenerative Organic Quinoa"

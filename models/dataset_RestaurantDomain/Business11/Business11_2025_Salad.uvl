@@ -1,0 +1,51 @@
+imports
+    JustSalad2025_Greens as Greens
+    JustSalad2025_Essentials as Essential
+    JustSalad2025_Premiums as Premiums
+    JustSalad2025_Proteins as Proteins
+    JustSalad2025_Cheese as Cheese
+    JustSalad2025_Other as Other 
+    JustSalad2025_Dressings as Dressings
+    JustSalad2025_Additions as Additions
+features
+    Salad {Price 9.99}
+        mandatory
+            Greens 
+            Essentials {abstract}
+                mandatory
+                    Essential.Ingredients
+            Dressings 
+                alternative
+                    "No dressing"
+                    "Dressing"
+                        mandatory
+                            JustSalad2025_Dressings.Dressing
+                        alternative
+                            "Mixed in"
+                            "On side"
+                        alternative
+                            Light
+                            Medium
+                            Heavy
+        optional
+            Premiums 
+            Proteins
+            Cheese 
+            Other 
+            Bread
+constraints
+    Salad.Price == sum(Salad, Price)
+    !Ingredients."Bob's Red Mill Hemp Hearts"
+    !Ingredients."Chopped Almonds"
+    !Ingredients."Crumbled Feta"
+    !Ingredients."Grated Cotija"
+    !Ingredients."Hass Avocado"
+    !Ingredients."Homemade Avocado Mash"
+    !Ingredients."Homemade Pico de Gallo"
+    !Ingredients."Hot Honey Goat Cheese"
+    !Ingredients."Roasted Cauliflower"
+    !Ingredients."Roasted Fajitas + Corn"
+    !Ingredients."Roasted Mushrooms"
+    !Ingredients."Shaved Parmesan"
+    !Ingredients."Shredded Cabbage"
+    !Ingredients."Basmati Rice"

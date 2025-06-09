@@ -59,6 +59,11 @@ The framework has been tested in Linux and Windows 11.
 ### Download and installation
 1. Install [Python 3.9+](https://www.python.org/)
 2. Download/Clone this repository and enter into the main directory.
+
+    `git clone https://github.com/jmhorcas/restaurant-domain.git`
+
+    `cd restaurant-domain`
+
 3. Create a virtual environment: `python -m venv env`
 4. Activate the environment: 
    
@@ -66,19 +71,17 @@ The framework has been tested in Linux and Windows 11.
 
    In Windows: `.\env\Scripts\Activate`
 
-5. Install the flamapy: `pip install flamapy`
+5. Install dependencies (flamapy): `pip install -r requirements.txt`
      
     ** In case that you are running Ubuntu and get an error installing flamapy, please install the package python3-dev with the command `sudo apt update && sudo apt install python3-dev` and update wheel and setuptools with the command `pip  install --upgrade pip wheel setuptools` before step 5.
-
-6. Update flamapy to the last version to support UVL extensions: `pip install flamapy-fm==2.0.2.dev0`
 
 
 ### Execution of the scripts
 Here we show how to execute the scripts to analyze a dataset and replicate the experiments of the paper.
-You can use the restaurant business dataset available in [models folder](models/restauration/) or any other dataset from the literature. Datasets from the literature are not direct available in this repository for authors' rights reasons, but they are available in the following links:
-- [FMBenchmark](https://github.com/SoftVarE-Group/feature-model-benchmark/tree/master)
-- [UVLHub](https://www.uvlhub.io/)
-- [SPLOT](http://uvlhub.io/doi/10.5281/zenodo.12697473) - The SPLOT dataset is available also as part of UVLHub in UVL format.
+You can use the restaurant business dataset available in [models folder](models/dataset_RestaurantDomain/) or any other dataset from the literature. Current datasets from the literature are the following:
+- [FMBenchmark](models/dataset_FMBenchmark/), originally obtained from [here](https://github.com/SoftVarE-Group/feature-model-benchmark/tree/master).
+- [UVLHub](models/dataset_UVLHub_2025_03_31/), originally obtained from [here](https://www.uvlhub.io/).
+- [SPLOT](models/dataset_SPLOT/), originally obtained from [here](http://uvlhub.io/doi/10.5281/zenodo.12697473). The SPLOT dataset is available also as part of UVLHub in UVL format.
 
 For each script, we describe its syntaxis, inputs, outputs, and an example of execution.
 
@@ -91,7 +94,7 @@ For each script, we describe its syntaxis, inputs, outputs, and an example of ex
   - Outputs:
     - A `complexity.csv` with the results.
     - A `complexity.log` file with warning and errors in case some FMs have syntax errors or other problems.
-  - Example: `python count_complexity.py models/restauration/`
+  - Example: `python count_complexity.py models/dataset_RestaurantDomain/`
 
 - **Complexity Stats:** Show statistical information of the dataset to plot a boxplot graph from the previous `complexity.csv` results file.
   
@@ -111,7 +114,7 @@ For each script, we describe its syntaxis, inputs, outputs, and an example of ex
   - Outputs:
     - A `language_constructs.csv` with the results.
     - A `language_constructs.log` file with warning and errors in case some FMs have syntax errors or other problems.
-  - Example: `python count_language_constructs.py models/restauration/`
+  - Example: `python count_language_constructs.py models/dataset_RestaurantDomain/`
 
 - **Language Constructs Stats:** Show statistical information of the dataset from the previous `language_constructs.csv` results file.
   

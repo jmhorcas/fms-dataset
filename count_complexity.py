@@ -65,6 +65,8 @@ def int2sci(n: int, precision: int = 2) -> str:
     """Convert a large int into scientific notation."""
     if n == 0:
         return '0e0'
+    if n == float('inf'):
+        return 'inf'
     exp = len(str(abs(n))) - 1
     mantissa = n / (10 ** exp)
     return f'{mantissa:.{precision}f}e{exp}'

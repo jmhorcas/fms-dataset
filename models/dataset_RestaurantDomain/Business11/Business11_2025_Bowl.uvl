@@ -1,0 +1,19 @@
+imports
+    Business11_2025_Bases as Bases
+    Business11_2025_Essentials as Essentials
+    Business11_2025_Proteins as Proteins
+    Business11_2025_Dressings as Dressing
+features
+    Bowl 
+        mandatory
+            Bases 
+            Sides 
+                mandatory
+                   Essentials.Ingredients
+            Dressings
+        optional
+            Proteins
+constraints
+    !Ingredients."Basmati Rice"
+    !Ingredients."Lundberg Basmati Rice"
+    !Ingredients."Regenerative Organic Quinoa"

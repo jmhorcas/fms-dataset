@@ -2,12 +2,13 @@
 - [Table of Contents](#table-of-contents)
 - [Challenges of modeling variability in practice with UVL: A Dataset of real-world product lines](#challenges-of-modeling-variability-in-practice-with-uvl-a-dataset-of-real-world-product-lines)
   - [Artifact description](#artifact-description)
+  - [Classification of FMs](#classification-of-fms)
   - [How to use it](#how-to-use-it)
     - [Requirements](#requirements)
     - [Download and installation](#download-and-installation)
     - [Execution of the scripts](#execution-of-the-scripts)
   
-
+  
 # Challenges of modeling variability in practice with UVL: A Dataset of real-world product lines
 This repository contains all the resources and artifacts that support the paper entitled "Dataset of feature models from the real world manually synthesized." accepted at the 29th International Systems and Software Product Line Conference (SPLC 2025).
 
@@ -16,7 +17,7 @@ This repository contains all the resources and artifacts that support the paper 
 We present a dataset of feature models (FMs) of the restaurant business domain using the full expressiveness power of the [Universal Variability Language (UVL)](https://universal-variability-language.github.io/).
 
 The artifact includes:
-1. The FM dataset with more than 50 models in UVL.
+1. The FM dataset with 53 feature models in UVL extracted from 30 brochures of 11 different real-world business.
 2. The Python scripts to replicate the experiments of the paper. This includes the following scripts:
   - [count_complexity.py](count_complexity.py): Read an FM in UVL (.uvl) or a directory with a dataset of FMs and generate a `complexity.csv` file with the number of features and the estimated number of configurations for each model.
   - [stats_complexity.py](stats_complexity.py): Read the .csv file generated with the previous `count_complexity` script, and show the statistical information of the dataset to plot a boxplot graph. That is, the median, the average, the lower and upper quartile, the lower and upper whisker, and the outliers.
@@ -24,6 +25,24 @@ The artifact includes:
   - [stats_language_constructs.py](stats_language_constructs.py): Read the .csv file generated with the previous `count_language_constructs` script, and show the statistical information of the dataset. That is, for each language construct level it shows the mean, standard deviation, count and percentage of those constructs according to the number of models in the dataset.
 3. The [results of our evaluation](evaluation/) containing all .csv result files and [instructions to replicate the experiments](#execution-of-the-scripts).
 
+
+## Classification of FMs
+
+| Business   |  Portfolio type                         | #Brochures | #UVL FMs | 
+| ---------- | --------------------------------------- | ---------- | -------- | 
+| Business01 | Fully customizable menus                | 12         | 14       | 
+| Business02 | Fully customizable menus                | 3          | 10       | 
+| Business03 | Products with implicit variation points | 1          | 1        |
+| Business04 | Product listings                        | 1          | 1        | 
+| Business05 | Fully customizable menus                | 4          | 4        | 
+| Business06 | Product listings                        | 1          | 1        | 
+| Business07 | Product listings                        | 5          | 1        | 
+| Business08 | Fully customizable menus                | 3          | 3        | 
+| Business09 | Product listings                        | 1          | 1        | 
+| Business10 | Product listings                        | 1          | 3        | 
+| Business10 | Products with implicit variation points | 1          | 1        | 
+| Business11 | Fully customizable menus                | 1          | 13       | 
+| **TOTAL: 11 different business**  |                  | **30**     | **53**   | 
 
 ## How to use it
 

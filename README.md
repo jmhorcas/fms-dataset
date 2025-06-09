@@ -1,6 +1,6 @@
 # Table of Contents
 - [Table of Contents](#table-of-contents)
-- [Challenges of modeling variability in practice with UVL: A Dataset of real-world product lines](#challenges-of-modeling-variability-in-practice-with-uvl-a-dataset-of-real-world-product-lines)
+- [Exploring Variability Modeling Challenges in UVL with a Dataset from the Restaurant Industry](#exploring-variability-modeling-challenges-in-uvl-with-a-dataset-from-the-restaurant-industry)
   - [Artifact description](#artifact-description)
   - [Classification of FMs](#classification-of-fms)
   - [How to use it](#how-to-use-it)
@@ -9,8 +9,8 @@
     - [Execution of the scripts](#execution-of-the-scripts)
   
   
-# Challenges of modeling variability in practice with UVL: A Dataset of real-world product lines
-This repository contains all the resources and artifacts that support the paper entitled "Dataset of feature models from the real world manually synthesized." accepted at the 29th International Systems and Software Product Line Conference (SPLC 2025).
+# Exploring Variability Modeling Challenges in UVL with a Dataset from the Restaurant Industry
+This repository contains all the resources and artifacts that support the paper entitled "Exploring Variability Modeling Challenges in UVL with a Dataset from the Restaurant Industry" accepted at the 29th International Systems and Software Product Line Conference (SPLC 2025).
 
 
 ## Artifact description
